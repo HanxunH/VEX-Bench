@@ -1,0 +1,14 @@
+# The published benchmark data lives on Hugging Face, not in this code repository.
+datasets/*.jsonl
+datasets/croissant.json
+prepare_hf_release.py
+
+# Local runs and credentials.
+.env
+.env.*
+!.env.example
+results/
+__pycache__/
+*.py[cod]
+.omc/
+.DS_Store

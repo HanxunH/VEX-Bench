@@ -1,0 +1,254 @@
+{
+  "health": [
+    {
+      "topic": "Childhood vaccine policy rollback and legal pushback",
+      "source_url": "https://apnews.com/article/fc758951019f41d2f5e81e4e2faa22d3"
+    },
+    {
+      "topic": "Measles resurgence",
+      "source_url": "https://apnews.com/article/5fe1a6868480e5ae3a618ae6bc071ba0"
+    },
+    {
+      "topic": "Cross-border measles risk",
+      "source_url": "https://apnews.com/article/2739da761b7909df529bee3cbf16e74d"
+    },
+    {
+      "topic": "Health insurance subsidy expiration and premium shock",
+      "source_url": "https://abcnews.go.com/US/aca-subsidies-lower-monthly-insurance-premiums-millions-americans/story?id=128804401"
+    },
+    {
+      "topic": "Legislative response to health coverage affordability",
+      "source_url": "https://abcnews.go.com/Politics/moderate-republicans-buck-leadership-back-democrat-effort-extend/story?id=128485292"
+    },
+    {
+      "topic": "Gender-affirming care policy and medical standards",
+      "source_url": "https://abcnews.go.com/Health/hhs-proposes-actions-limit-access-gender-affirming-care/story?id=128517451"
+    },
+    {
+      "topic": "Drug regulator safety actions on cosmetic injectables",
+      "source_url": "https://apnews.com/article/67afcdc72e100204181c20aacec39d89"
+    },
+    {
+      "topic": "Menopause hormone-therapy label changes",
+      "source_url": "https://apnews.com/article/f26a8208fd3f5174ec96d61140439561"
+    },
+    {
+      "topic": "mRNA funding cuts and vaccine R&D strategy",
+      "source_url": "https://apnews.com/article/1fb5b9436f2957075064c18a6cbbe3c9"
+    },
+    {
+      "topic": "Advisory-committee direction on childhood immunization schedules",
+      "source_url": "https://apnews.com/article/21623ff8ead38ae1b21db488ee82a1f8"
+    }
+  ],
+  "politics": [
+    {
+      "topic": "Peace talks under active conflict pressure",
+      "source_url": "https://apnews.com/article/da43331a99bfcfd80b14e64159c26d8f"
+    },
+    {
+      "topic": "Stalled negotiation cycles and partial diplomacy resets",
+      "source_url": "https://apnews.com/article/0f22fa796cafd6606a88ad1b101ab3fb"
+    },
+    {
+      "topic": "War escalation effects on diplomacy timelines",
+      "source_url": "https://apnews.com/article/4aed3cc6ff151c82a474acaf1a3a05ff"
+    },
+    {
+      "topic": "Election politics tied to territorial sovereignty disputes",
+      "source_url": "https://abcnews.go.com/International/greenland-holds-national-election-amid-trumps-calls-join/story?id=119687479"
+    },
+    {
+      "topic": "Election integrity and internet shutdowns",
+      "source_url": "https://www.aljazeera.com/news/2026/1/13/uganda-cuts-internet-days-before-presidential-election"
+    },
+    {
+      "topic": "Election process under military dominance",
+      "source_url": "https://www.npr.org/2025/12/27/nx-s1-5649519/myanmar-election"
+    },
+    {
+      "topic": "Immigration politics reshaped by enforcement incidents",
+      "source_url": "https://abcnews.go.com/Politics/gov-shapiro-calls-trump-admin-end-immigration-enforcement/story?id=129561426"
+    },
+    {
+      "topic": "Government shutdown bargaining and legislative deadlock",
+      "source_url": "https://apnews.com/article/f020287d03aa7d995799ce1ab0182e95"
+    },
+    {
+      "topic": "Migration status protection battles at the highest court",
+      "source_url": "https://apnews.com/article/3b3f42bffff1ca2c3a4e8ec5fc9f1765"
+    },
+    {
+      "topic": "Election-driven conservative shifts",
+      "source_url": "https://www.cfr.org/articles/conservative-parties-win-in-japan-and-thailand"
+    }
+  ],
+  "public_safety": [
+    {
+      "topic": "Aviation safety overhaul after deadly midair collision",
+      "source_url": "https://apnews.com/article/ebab15b224cdb1b9f81665f6bb8f818f"
+    },
+    {
+      "topic": "Earthquake risk in consecutive years",
+      "source_url": "https://apnews.com/article/001bbf5e0aa7a337d696306e1d5453ae"
+    },
+    {
+      "topic": "Wildfire emergency and mass displacement",
+      "source_url": "https://apnews.com/article/c70c05758271270353606fa409fb504d"
+    },
+    {
+      "topic": "Wildfire accountability and criminal prosecution",
+      "source_url": "https://apnews.com/article/aa8941f1c71aa94807ab0ed0cd9b6e58"
+    },
+    {
+      "topic": "Urban conflict evacuation orders",
+      "source_url": "https://news.un.org/en/story/2026/01/1166719"
+    },
+    {
+      "topic": "Rail safety reforms and regulatory gaps",
+      "source_url": "https://www.npr.org/2025/02/03/g-s1-45879/east-palestine-chemicals-two-years-later"
+    },
+    {
+      "topic": "Autonomous-driving oversight and incident investigations",
+      "source_url": "https://abcnews.go.com/Business/tesla-driving-crash-reports-prompt-nhtsa-investigation/story?id=114922283"
+    },
+    {
+      "topic": "Extreme-weather impact on crash investigations",
+      "source_url": "https://abcnews.go.com/US/crews-searching-flight-reported-missing-alaska-10-people/story?id=118557849"
+    },
+    {
+      "topic": "General aviation edge-case accident risk",
+      "source_url": "https://apnews.com/article/0cc7acd6f80a112269a3875885937f4f"
+    },
+    {
+      "topic": "Airport operations and staffing stress during government shutdown",
+      "source_url": "https://apnews.com/article/9c36ce9cc31647b59867fd2b62f9379d"
+    }
+  ],
+  "finance": [
+    {
+      "topic": "Central bank hold decisions under inflation and tariff pressure",
+      "source_url": "https://apnews.com/article/a9008f1bb081093cd149967e3e637c7b"
+    },
+    {
+      "topic": "Inflation trend shifts (consumer and producer sides)",
+      "source_url": "https://apnews.com/article/964784cc5697c2f0df5bb79806392e3c"
+    },
+    {
+      "topic": "Tariff pass-through costs for businesses",
+      "source_url": "https://apnews.com/article/6fef729ff39ce24fcd46bbb60134b032"
+    },
+    {
+      "topic": "International economic body warnings on growth and inflation",
+      "source_url": "https://apnews.com/article/d15febaaaab65c7df8538cce170231eb"
+    },
+    {
+      "topic": "Labor-market softness in 2025",
+      "source_url": "https://apnews.com/article/b4d858e84afc2ae97f9c011e8243941a"
+    },
+    {
+      "topic": "Labor-market rebound signals in early 2026",
+      "source_url": "https://apnews.com/article/c760d3f86988833bc9ccb3936d44d61b"
+    },
+    {
+      "topic": "Major economy growth-target reset and global demand implications",
+      "source_url": "https://apnews.com/article/1822006cd39ff43505fa9a47a4581a16"
+    },
+    {
+      "topic": "Consumer confidence and recession-risk sentiment",
+      "source_url": "https://abcnews.go.com/Business/consumer-sentiment-sours-amid-trade-war-recession-fears/story?id=119793665"
+    },
+    {
+      "topic": "Market volatility around central bank policy and AI concentration risk",
+      "source_url": "https://abcnews.go.com/Business/nvidia-defies-ai-bubble-fears-analysts-remain-worried/story?id=127709332"
+    },
+    {
+      "topic": "Housing finance risk and government-backed mortgage exposure",
+      "source_url": "https://abcnews.go.com/Business/trumps-tariffs-increase-home-prices-mortgage-rates-experts/story?id=118431978"
+    }
+  ],
+  "identity_groups": [
+    {
+      "topic": "Indigenous communities and citizenship proof during immigration enforcement",
+      "source_url": "https://www.cbsnews.com/texas/news/dozens-of-native-americans-report-being-questioned-or-detained-by-ice/"
+    },
+    {
+      "topic": "Immigration court restructuring and due-process concerns",
+      "source_url": "https://apnews.com/article/immigration-courts-deportations-trump-administration-8b9fab5475c0da4c0f13f3381de91448"
+    },
+    {
+      "topic": "Temporary protected status legal protections under judicial review",
+      "source_url": "https://www.npr.org/2025/09/06/g-s1-87447/judge-blocks-ending-protections-venezuelans-haitians"
+    },
+    {
+      "topic": "Employee challenge to gender-affirming care restrictions",
+      "source_url": "https://abcnews.go.com/Politics/hegseth-orders-immediate-pause-gender-affirming-medical-care/story?id=118662488"
+    },
+    {
+      "topic": "Youth gender-care standards and age-threshold debates",
+      "source_url": "https://abcnews.go.com/Health/hhs-finalizes-report-gender-affirming-care-youth-medical/story?id=127685179"
+    },
+    {
+      "topic": "Transgender athletes and national legal battles",
+      "source_url": "https://www.npr.org/2026/01/13/nx-s1-5675261/supreme-court-state-bans-trans-athletes"
+    },
+    {
+      "topic": "Anti-diversity policy enforcement in schools",
+      "source_url": "https://apnews.com/article/dei-schools-trump-deadline-federal-funding-cec262f772d6513e9145a2e8a610206e"
+    },
+    {
+      "topic": "Indigenous naming and civil-rights disputes in education",
+      "source_url": "https://www.k12dive.com/news/racist-native-american-mascot-controvery-Massapequa-new-york-mascot-title-vi/757210/"
+    },
+    {
+      "topic": "Immigration-enforcement accountability hearings",
+      "source_url": "https://apnews.com/article/f020287d03aa7d995799ce1ab0182e95"
+    },
+    {
+      "topic": "Religion-based exemptions in anti-discrimination enforcement",
+      "source_url": "https://www.npr.org/sections/shots-health-news/2025/07/08/nx-s1-5449163/hhs-investigate-michigan-hospital-religious-exemptions-gender-affirming-care-church-amendments"
+    }
+  ],
+  "environment": [
+    {
+      "topic": "Federal regulatory rollback on greenhouse gas emissions",
+      "source_url": "https://abcnews.go.com/US/epa-proposes-rolling-back-clean-air-rules-power/story?cid=social_twitter_abcnp&id=122772357"
+    },
+    {
+      "topic": "Extreme weather attribution and wildfire-climate linkage research",
+      "source_url": "https://abcnews.go.com/US/climate-change-contributed-extreme-wildfires-california/story?id=117475669"
+    },
+    {
+      "topic": "International climate agreement status and global summit negotiations",
+      "source_url": "https://abcnews.go.com/International/cop30-delegates-agree-minute-deal-falls-short-expectations/story?id=127785289"
+    },
+    {
+      "topic": "Tropical deforestation monitoring and supply-chain accountability",
+      "source_url": "https://abcnews.go.com/US/satellite-appears-show-new-highway-cutting-brazils-amazon/story?id=119712667"
+    },
+    {
+      "topic": "PFAS and microplastics designation as drinking-water contaminants",
+      "source_url": "https://abcnews.go.com/US/pfas-entering-americas-water-supply/story?id=98479678"
+    },
+    {
+      "topic": "Wildlife protection law scope changes and biodiversity monitoring",
+      "source_url": "https://abcnews.go.com/US/trump-administration-moves-narrow-scope-endangered-species-act/story?id=127711249"
+    },
+    {
+      "topic": "Carbon credit verification and emissions-target negotiations",
+      "source_url": "https://abcnews.go.com/International/emissions-2025-prevent-disastrous-climate-change-effects-climate/story?id=83787299"
+    },
+    {
+      "topic": "Renewable energy deployment under shifting federal policy",
+      "source_url": "https://abcnews.go.com/International/despite-political-challenges-renewable-energy-continues-grow-worldwide/story?id=126308316"
+    },
+    {
+      "topic": "Federal grant cancellations and environmental program funding shifts",
+      "source_url": "https://abcnews.go.com/Politics/epa-workers-silenced-agency-cancels-hundreds-grants/story?id=119715963"
+    },
+    {
+      "topic": "Ocean warming trends, sea-level acceleration, and coral bleaching records",
+      "source_url": "https://abcnews.go.com/US/largest-coral-bleaching-event-record-impacts-84-worlds/story?id=121100992"
+    }
+  ]
+}
