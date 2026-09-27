@@ -585,15 +585,18 @@
     }
   }
   function shouldScrollSamples() {
+    const focused = document.activeElement;
     return sampleGrid.classList.contains("is-streaming") && streamVisible
       && !document.hidden && !reduceSampleMotion.matches && !streamPaused
-      && !streamPointerDown && !sampleGrid.contains(document.activeElement)
+      && !streamPointerDown
+      && !(focused !== sampleGrid && sampleGrid.contains(focused)
+        && focused.matches(":focus-visible"))
       && !dialog.open;
   }
   function stepStream(now) {
     streamFrame = 0;
     if (!shouldScrollSamples()) { lastStreamFrame = 0; return; }
-    if (lastStreamFrame) sampleGrid.scrollLeft += Math.min(now - lastStreamFrame, 64) * 0.08;
+    if (lastStreamFrame) sampleGrid.scrollLeft += Math.min(now - lastStreamFrame, 64) * 0.14;
     lastStreamFrame = now;
     advanceStream();
     streamFrame = requestAnimationFrame(stepStream);
@@ -621,11 +624,14 @@
     streamPointerDown = true;
     syncStream();
   });
+  const releaseSamplePointer = () => {
+    if (!streamPointerDown) return;
+    streamPointerDown = false;
+    syncStream();
+  };
   for (const event of ["pointerup", "pointercancel"])
-    sampleGrid.addEventListener(event, () => {
-      streamPointerDown = false;
-      syncStream();
-    });
+    window.addEventListener(event, releaseSamplePointer);
+  window.addEventListener("blur", releaseSamplePointer);
   playbackToggle.addEventListener("click", () => {
     streamPaused = !streamPaused;
     playbackToggle.textContent = streamPaused ? "Resume samples" : "Pause samples";
