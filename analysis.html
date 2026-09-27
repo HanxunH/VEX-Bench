@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="VEX-Bench results: verification complexity, model and method ranks, entity realism, and generation and verification costs." />
+    <meta name="theme-color" content="#f7f9ff" />
+    <meta name="color-scheme" content="light dark" />
+    <script src="theme.js?v=20260926-2"></script>
+    <title>Benchmark analysis · VEX-Bench</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260926-28" />
+    <link rel="stylesheet" href="analysis.css?v=36" />
+    <script defer src="model-icons.js?v=1"></script>
+    <script defer src="figure-charts.js?v=4"></script>
+    <script defer src="analysis.js?v=27"></script>
+  </head>
+  <body class="analysis-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand" aria-label="VEX-Bench home"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 8 18 30 31 8M12 8l6 11 6-11" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" /></svg><span>VEX<span class="brand-light">-Bench</span></span></a>
+        <nav aria-label="Main navigation"><a href="index.html#framework">Benchmark</a><a href="index.html#benchmark">Leaderboard</a><a href="index.html#dataset">Dataset</a><a href="index.html#paper">Paper</a></nav>
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" type="button" title="Change theme: System → Light" aria-label="Color theme: System. Switch to Light.">
+            <svg class="theme-icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" /></svg>
+            <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" /></svg>
+            <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 9.2 13.9A7.5 7.5 0 0 1 12 2Z" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="analysis-main">
+      <section class="analysis-intro section-wrap" aria-labelledby="analysis-title">
+        <div class="analysis-intro-copy">
+          <h1 id="analysis-title">Benchmark results.</h1>
+          <p class="analysis-scope"><span>5,880 articles</span><span>7 methods × 7 models</span><span>2 tasks</span></p>
+        </div>
+      </section>
+      <div id="analysis-status" class="analysis-status section-wrap" role="status">Loading benchmark results…</div>
+      <div class="analysis-layout section-wrap">
+        <div class="analysis-navigation">
+          <nav class="analysis-nav" aria-label="Analysis sections">
+            <p>Key findings</p>
+            <a href="#finding-1" aria-current="location">1 · Task profiles</a>
+            <a href="#finding-2">2 · Elicitation success</a>
+            <a href="#finding-3">3 · Integrated risk</a>
+            <a href="#finding-4">4 · Entity realism</a>
+            <a href="#finding-5">5 · Cost comparison</a>
+            <p class="analysis-nav-secondary">More results</p>
+            <a href="#domain-diagnostics">Domain diagnostics</a>
+          </nav>
+          <p class="analysis-nav-hint">Scroll for more sections →</p>
+        </div>
+        <div class="analysis-content">
+          <section class="analysis-section" id="finding-1" aria-labelledby="finding-1-title">
+            <div class="section-head"><h2 id="finding-1-title"><span class="finding-label">Key Finding 1:</span> Different tasks induce distinct verification-complexity profiles.</h2><p>Rewrite starts from a real article; fabrication starts without one.</p></div>
+            <div class="subsection-head"><h3>Fabrication and rewrite</h3><p>D1–D5 scores by method, averaged over valid, non-refused outputs.</p></div>
+            <div id="dimension-table" class="data-window" role="region" aria-label="Scrollable fabrication and rewrite method comparison table" tabindex="0"></div>
+            <ul id="dimension-reading" class="analysis-reading"></ul>
+          </section>
+
+          <section class="analysis-section" id="finding-2" aria-labelledby="finding-2-title">
+            <div class="section-head"><h2 id="finding-2-title"><span class="finding-label">Key Finding 2:</span> Success-based evaluations underestimate verification complexity.</h2><p>Both tasks pooled (840 conditions per method); D1–D5 use scorable outputs.</p></div>
+            <p class="chart-note">Bars show VEX (%). SR = elicitation success; NR = non-refusal.</p>
+            <div id="method-bars" class="method-bars"></div>
+            <div id="method-table" class="data-window" role="region" aria-label="Scrollable method benchmark results table" tabindex="0"></div>
+            <ul id="method-reading" class="analysis-reading"></ul>
+          </section>
+
+          <section class="analysis-section" id="finding-3" aria-labelledby="finding-3-title">
+            <div class="section-head">
+              <h2 id="finding-3-title"><span class="finding-label">Key Finding 3:</span> LLMs, methods, and their interactions exhibit distinct integrated risk.</h2>
+              <ul class="finding-summary">
+                <li><span data-method-identity="isc">ISC</span> leads method averages; <span data-model-identity="deepseek__deepseek-v4-pro">DeepSeek V4 Pro</span> leads model averages.</li>
+                <li><span data-model-identity="x-ai__grok-4.1-fast">Grok</span> × <span data-method-identity="disinfocap">DisinfoCap</span> leads the pairwise mean rank.</li>
+              </ul>
+            </div>
+            <div class="subsection-head"><h3>Ranks across 62 settings</h3><p>31 dimension combinations × two tasks. Lower rank means higher risk. “#1” counts first-place finishes.</p></div>
+            <div class="paper-figure-set">
+              <div class="paper-figure-grid">
+                <figure class="paper-figure" data-paper-figure="rank_method.pdf">
+                  <figcaption>Mean rank by method</figcaption>
+                  <div id="method-ranks" class="paper-chart" data-paper-chart="rank_method.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="rank_model.pdf">
+                  <figcaption>Mean rank by model</figcaption>
+                  <div id="model-ranks" class="paper-chart" data-paper-chart="rank_model.pdf"></div>
+                </figure>
+                <figure class="paper-figure paper-figure--full" data-paper-figure="rank_cells.pdf">
+                  <figcaption>Mean rank by model × method</figcaption>
+                  <div id="pair-ranks" class="paper-chart" data-paper-chart="rank_cells.pdf"></div>
+                </figure>
+              </div>
+            </div>
+            <ul class="analysis-reading">
+              <li><span data-method-identity="isc">ISC</span> ranks first among methods in <strong>61/62</strong> settings.</li>
+              <li><span data-model-identity="x-ai__grok-4.1-fast">Grok</span> × <span data-method-identity="disinfocap">DisinfoCap</span> has the strongest pairwise mean.</li>
+              <li><span data-model-identity="x-ai__grok-4.1-fast">Grok</span> × <span data-method-identity="poisonedrag">PoisonedRAG</span> finishes first in <strong>15/62</strong>.</li>
+            </ul>
+            <details class="evidence-details">
+              <summary>Full results by model</summary>
+              <div class="evidence-detail-body">
+                <div class="analysis-model-control"><label class="analysis-field" for="analysis-model">Target model <select id="analysis-model" disabled><option>Loading models…</option></select></label><span id="analysis-model-link" class="analysis-selected-model"></span></div>
+                <h3>Fabrication</h3>
+                <ul id="model-summary" class="analysis-reading"></ul>
+                <div id="model-table" class="data-window" role="region" aria-label="Scrollable fabrication results by model" tabindex="0"></div>
+                <h3>Rewrite</h3>
+                <ul id="model-rewrite-summary" class="analysis-reading"></ul>
+                <div id="model-rewrite-table" class="data-window" role="region" aria-label="Scrollable rewrite results by model" tabindex="0"></div>
+              </div>
+            </details>
+          </section>
+
+          <section class="analysis-section" id="finding-4" aria-labelledby="finding-4-title">
+            <div class="section-head">
+              <h2 id="finding-4-title"><span class="finding-label">Key Finding 4:</span> Fabrication combines real institutions with fabricated individuals.</h2>
+              <ul class="finding-summary">
+                <li>Fabrication often names real institutions but invents people and contacts.</li>
+                <li>These are agent verdicts about entity mentions, not verified facts about whole articles.</li>
+              </ul>
+            </div>
+            <div class="paper-figure-set">
+              <h3>Entity results · fabrication</h3>
+              <div class="paper-figure-grid paper-figure-grid--stacked">
+                <figure class="paper-figure" data-paper-figure="entity_composition_fabrication.pdf">
+                  <figcaption>Entity composition</figcaption>
+                  <p class="figure-note">Share of each entity type among real or fabricated mentions.</p>
+                  <div class="paper-chart" data-paper-chart="entity_composition_fabrication.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="real_institution_heatmap_fabrication.pdf">
+                  <figcaption>Recurring real institutions</figcaption>
+                  <div class="paper-chart" data-paper-chart="real_institution_heatmap_fabrication.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="fake_person_heatmap_fabrication.pdf">
+                  <figcaption>Recurring fabricated people</figcaption>
+                  <div class="paper-chart" data-paper-chart="fake_person_heatmap_fabrication.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="real_person_heatmap_fabrication.pdf">
+                  <figcaption>Recurring real people</figcaption>
+                  <div class="paper-chart" data-paper-chart="real_person_heatmap_fabrication.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="entity_composition_fabrication_per_model.pdf">
+                  <figcaption>Entity realism by model</figcaption>
+                  <p class="figure-note">Percent judged real. Counts show real / total mentions.</p>
+                  <div class="paper-chart" data-paper-chart="entity_composition_fabrication_per_model.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="fake_contact_heatmap_fabrication.pdf">
+                  <figcaption>Recurring fabricated contacts</figcaption>
+                  <div class="paper-chart" data-paper-chart="fake_contact_heatmap_fabrication.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="real_contact_heatmap_fabrication.pdf">
+                  <figcaption>Recurring real contacts</figcaption>
+                  <div class="paper-chart" data-paper-chart="real_contact_heatmap_fabrication.pdf"></div>
+                </figure>
+              </div>
+            </div>
+            <p class="source-line">Paper entity results. “Real” and “fabricated” are agent verdicts; unverifiable mentions are excluded.</p>
+          </section>
+
+          <section class="analysis-section" id="finding-5" aria-labelledby="finding-5-title">
+            <div class="section-head">
+              <h2 id="finding-5-title"><span class="finding-label">Key Finding 5:</span> Generation is cheaper than verification.</h2>
+              <ul class="finding-summary">
+                <li>Generating an article costs <strong>1.45¢</strong> on average; checking it with an agent costs <strong>17.86¢</strong>—<strong>12.4×</strong> as much.</li>
+                <li>For <span data-model-identity="x-ai__grok-4.1-fast">Grok</span>, the ratio reaches <strong>169×</strong>.</li>
+              </ul>
+            </div>
+            <div class="cost-toolbar"><div class="cost-switch" role="group" aria-label="Group cost results by"><button type="button" data-cost-group="models" aria-pressed="true" aria-controls="cost-bars cost-table">Models</button><button type="button" data-cost-group="methods" aria-pressed="false" aria-controls="cost-bars cost-table">Methods</button></div><ul class="cost-legend" aria-label="Cost components"><li><span class="cost-key generation" aria-hidden="true"></span>Generation</li><li><span class="cost-key llm" aria-hidden="true"></span>Agent LLM</li><li><span class="cost-key search" aria-hidden="true"></span>Web search</li></ul></div>
+            <p class="chart-note">Costs in US cents per article. Ratio = verification / generation.</p>
+            <div id="cost-bars" class="cost-bars"></div>
+            <div id="cost-table" class="data-window" role="region" aria-label="Scrollable generation and checking cost table" tabindex="0"></div>
+            <p class="source-line">Paper cost estimates. US cents per valid, non-refused article; LLM and search costs are estimated.</p>
+          </section>
+
+          <section class="analysis-section" id="domain-diagnostics" aria-labelledby="domain-diagnostics-title">
+            <div class="section-head"><h2 id="domain-diagnostics-title">Domain diagnostics.</h2><p>Verification complexity, model yield and entity realism across the six benchmark domains.</p></div>
+            <div class="paper-figure-set">
+              <div class="paper-figure-grid paper-figure-grid--stacked">
+                <figure class="paper-figure" data-paper-figure="domain_dim_heatmap.pdf">
+                  <figcaption>Verification complexity by domain</figcaption>
+                  <div class="paper-chart" data-paper-chart="domain_dim_heatmap.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="domain_model_nr_heatmap.pdf">
+                  <figcaption>Elicitation success by domain and model</figcaption>
+                  <div class="paper-chart" data-paper-chart="domain_model_nr_heatmap.pdf"></div>
+                </figure>
+                <figure class="paper-figure" data-paper-figure="domain_entity_real_heatmap.pdf">
+                  <figcaption>Entity realism by domain</figcaption>
+                  <div class="paper-chart" data-paper-chart="domain_entity_real_heatmap.pdf"></div>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+    <footer class="analysis-footer"><div class="section-wrap"><a href="index.html#paper">← Return to VEX-Bench</a><span>Results from the VEX-Bench paper.</span></div></footer>
+  </body>
+</html>

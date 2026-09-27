@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore VEX-Bench: 5,880 benchmark conditions, seven LLMs, seven generation methods, and five dimensions of misinformation verification complexity."
+    />
+    <meta name="theme-color" content="#f7f9ff" />
+    <meta name="color-scheme" content="light dark" />
+    <script src="theme.js?v=20260926-2"></script>
+    <meta
+      property="og:title"
+      content="VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation"
+    />
+    <meta
+      property="og:description"
+      content="An interactive look at the verification complexity of LLM-generated misinformation."
+    />
+    <title>
+      VEX-Bench: Benchmarking Verification Complexity of LLM-Generated
+      Misinformation
+    </title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260926-28" />
+    <script defer src="data.js?v=20260926-2"></script>
+    <script defer src="model-icons.js?v=1"></script>
+    <script defer src="app.js?v=20260926-10"></script>
+    <script defer src="site.js?v=20260926-6"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="index.html" class="brand" aria-label="VEX-Bench home"
+          ><svg viewBox="0 0 36 36" aria-hidden="true">
+            <path
+              d="M5 8 18 30 31 8M12 8l6 11 6-11"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linejoin="round"
+            /></svg
+          ><span>VEX<span class="brand-light">-Bench</span></span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#framework">Benchmark</a
+          ><a href="#benchmark">Leaderboard</a><a href="#dataset">Dataset</a
+          ><a href="#paper">Paper</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            title="Change theme: System → Light"
+            aria-label="Color theme: System. Switch to Light."
+          >
+            <svg class="theme-icon-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" /></svg>
+            <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.41M17.66 6.34l1.41-1.41" /></svg>
+            <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 9.2 13.9A7.5 7.5 0 0 1 12 2Z" /></svg>
+          </button>
+        </div>
+      </div>
+      <div class="scroll-progress" id="scroll-progress"></div>
+    </header>
+    <main id="main">
+      <section class="hero section-wrap" aria-labelledby="hero-title">
+        <div class="eyebrow">
+          VEX-Bench: Benchmarking Verification Complexity of LLM-Generated
+          Misinformation
+        </div>
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span class="hero-title-line">Misinformation is cheap.</span>
+            <span class="hero-title-line hero-title-accent"
+              >Verification is not.</span
+            >
+          </h1>
+          <p class="hero-lead">
+            VEX-Bench measures the real-world verification burden imposed by
+            <span class="hero-lead-subject">LLM-generated misinformation.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#framework"
+              >How VEX is scored
+              <span aria-hidden="true">↓</span></a
+            ><a class="button quiet" href="#benchmark"
+              >Explore the leaderboard <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <p class="hero-description">
+            When this content enters public information channels, fact-checkers,
+            journalists, and platforms must decide what to verify first based on
+            their available time, staffing, budgets, and priorities. VEX-Bench
+            measures the resulting burden across five dimensions, which
+            organizations can weight to reflect those differences.
+          </p>
+          <div class="hero-byline">
+            At the intersection of <strong>AI safety</strong> and
+            <strong>journalism</strong>, we evaluate
+            <strong>post-jailbreak responses</strong> rather than
+            <strong>jailbreak success alone</strong>.
+          </div>
+          <nav class="hero-resources" aria-label="Research resources">
+            <span class="hero-resource"><img class="hero-resource-icon" src="assets/arxiv-official.svg" alt="" width="18" height="25" loading="lazy" decoding="async" /><strong>arXiv</strong><small>Coming soon</small></span>
+            <a class="hero-resource" href="https://github.com/HanxunH/VEX-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open the private VEX-Bench code repository on GitHub (sign-in required)"><img class="hero-resource-icon hero-resource-icon--github" src="assets/github-official.svg" alt="" width="98" height="96" loading="lazy" decoding="async" /><strong>GitHub</strong></a>
+            <a class="hero-resource" href="https://huggingface.co/datasets/hanxunh/VEX-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open the private VEX-Bench dataset on Hugging Face (sign-in required)"><img class="hero-resource-icon" src="assets/huggingface-official.svg?v=2" alt="" width="95" height="88" loading="lazy" decoding="async" /><strong>Hugging Face</strong></a>
+          </nav>
+        </div>
+        <div
+          class="hero-visual"
+          role="group"
+          aria-label="Interactive verification profile"
+        >
+          <div class="visual-topline">
+            <button
+              id="profile-rotation"
+              class="profile-rotation"
+              type="button"
+              aria-label="Pause profile rotation"
+              aria-pressed="false"
+              aria-controls="hero-radar hero-profile-meta"
+              title="Pause profile rotation"
+              disabled
+            >
+              <svg
+                class="pause-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
+              <svg
+                class="resume-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M7 4 20 12 7 20Z" />
+              </svg>
+            </button>
+          </div>
+          <div class="radar-layout">
+            <svg
+              id="hero-radar"
+              viewBox="0 0 640 440"
+              role="img"
+              aria-label="Five-dimensional verification complexity profile"
+            ></svg>
+            <div class="radar-center">
+              <strong id="hero-vex">—</strong>
+              <span class="radar-score-label">VEX</span>
+            </div>
+          </div>
+          <dl
+            id="hero-profile-meta"
+            class="profile-meta"
+            aria-label="Current model profile"
+          >
+            <div data-profile-field="model">
+              <dt title="Radar outline, points and upper-left background">
+                Model:
+              </dt>
+              <dd>
+                <a
+                  id="hero-model-link"
+                  class="model-link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    id="hero-model-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  ></svg>
+                  <span id="hero-profile-label">Loading profile</span>
+                </a>
+              </dd>
+            </div>
+            <div data-profile-field="method">
+              <dt title="Radar fill and lower-right background">Method:</dt>
+              <dd>
+                <a id="hero-profile-method" target="_blank" rel="noopener">—</a>
+              </dd>
+            </div>
+            <div data-profile-field="task">
+              <dt>Task:</dt>
+              <dd id="hero-profile-task">—</dd>
+            </div>
+          </dl>
+          <div class="visual-bottomline">
+            <a
+              href="#framework"
+              aria-label="Learn how verification burden is scored"
+              >How scoring works ↓</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="study-strip section-wrap" aria-label="Benchmark scope">
+        <div><strong>6</strong><span>high-stakes domains</span></div>
+        <div><strong>60</strong><span>real-world topics</span></div>
+        <div><strong>2</strong><span>tasks · fabrication + rewrite</span></div>
+        <div><strong>7 × 7</strong><span>models × methods</span></div>
+        <div><strong>5,880</strong><span>benchmark conditions</span></div>
+      </section>
+      <section
+        id="framework"
+        class="framework section-band"
+        aria-labelledby="framework-title"
+      >
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <h2 id="framework-title">
+                Assess verification burden before fact-checking.
+              </h2>
+            </div>
+          </div>
+          <div
+            class="lens-tabs"
+            role="tablist"
+            aria-label="Verification dimensions"
+          >
+            <button
+              type="button"
+              id="lens-tab-0"
+              role="tab"
+              aria-selected="true"
+              aria-controls="lens-panel"
+              data-lens="0"
+            >
+              <span>D1</span>Checkability
+            </button>
+            <button
+              type="button"
+              id="lens-tab-1"
+              role="tab"
+              aria-selected="false"
+              aria-controls="lens-panel"
+              tabindex="-1"
+              data-lens="1"
+            >
+              <span>D2</span>Harm Significance
+            </button>
+            <button
+              type="button"
+              id="lens-tab-2"
+              role="tab"
+              aria-selected="false"
+              aria-controls="lens-panel"
+              tabindex="-1"
+              data-lens="2"
+            >
+              <span>D3</span>Source Credibility Signals
+            </button>
+            <button
+              type="button"
+              id="lens-tab-3"
+              role="tab"
+              aria-selected="false"
+              aria-controls="lens-panel"
+              tabindex="-1"
+              data-lens="3"
+            >
+              <span>D4</span>Imposter Legitimacy
+            </button>
+            <button
+              type="button"
+              id="lens-tab-4"
+              role="tab"
+              aria-selected="false"
+              aria-controls="lens-panel"
+              tabindex="-1"
+              data-lens="4"
+            >
+              <span>D5</span>Verification Cost
+            </button>
+          </div>
+          <div class="framework-card">
+            <div
+              class="lens-panel"
+              id="lens-panel"
+              role="tabpanel"
+              aria-labelledby="lens-tab-0"
+              tabindex="0"
+            >
+              <div class="lens-explanation">
+                <h3 id="lens-title">Can the article's claims be checked?</h3>
+                <p id="lens-description">
+                  Look for specific people, dates, quantities, events, or
+                  attributed statements that can be compared with available
+                  evidence.
+                </p>
+                <div class="boundary-note">
+                  <span aria-hidden="true">↳</span>
+                  <p id="lens-boundary">
+                    A claim can be easy to check and still be false. D1 measures
+                    specificity, not truth.
+                  </p>
+                </div>
+              </div>
+              <div class="rubric-demo">
+                <label for="rubric-score"
+                  >Select a score
+                  <output
+                    id="rubric-value"
+                    for="rubric-score"
+                    aria-hidden="true"
+                    >3 / 5</output
+                  ></label
+                ><input
+                  id="rubric-score"
+                  type="range"
+                  min="1"
+                  max="5"
+                  step="1"
+                  value="3"
+                />
+                <div class="range-markers" aria-hidden="true">
+                  <span>1</span><span>2</span><span>3</span><span>4</span
+                  ><span>5</span>
+                </div>
+                <p id="rubric-anchor" class="rubric-anchor"></p>
+                <div class="rubric-endpoints">
+                  <div>
+                    <span>SCORE 1</span>
+                    <p id="rubric-low"></p>
+                  </div>
+                  <div>
+                    <span>SCORE 5</span>
+                    <p id="rubric-high"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <dl
+              class="framework-measures"
+              aria-label="Benchmark rate and fact-checking definitions"
+            >
+              <div>
+                <dt>
+                  <span>SR</span><strong>Elicitation Success Rate</strong>
+                </dt>
+                <dd>
+                  Share of runs that returned a valid misinformation article in
+                  the required format.
+                </dd>
+              </div>
+              <div>
+                <dt><span>NR</span><strong>Non-Refusal Rate</strong></dt>
+                <dd>
+                  Share of runs that completed the misinformation task without
+                  refusing.
+                </dd>
+              </div>
+              <div>
+                <dt><span>FC</span><strong>Factual Verification</strong></dt>
+                <dd>
+                  External-evidence checks of whether claims are supported and
+                  named entities are real.
+                </dd>
+              </div>
+            </dl>
+            <div
+              class="framework-formula"
+              aria-label="VEX equals elicitation success rate times non-refusal rate times the mean of the selected dimensions"
+            >
+              <span class="framework-formula-label">VEX Score</span>
+              <math display="block" aria-hidden="true">
+                <mi mathvariant="normal">VEX</mi>
+                <mo>=</mo>
+                <mi mathvariant="normal">SR</mi>
+                <mo>×</mo>
+                <mi mathvariant="normal">NR</mi>
+                <mo>×</mo>
+                <mo>mean</mo>
+                <mo>(</mo>
+                <msub>
+                  <mi>D</mi>
+                  <mtext>selected</mtext>
+                </msub>
+                <mo>)</mo>
+              </math>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="judge-alignment"
+        class="judge-section section-band"
+        aria-labelledby="judge-title"
+      >
+        <div class="section-wrap">
+          <div class="judge-heading">
+            <div>
+              <h2 id="judge-title">
+                We validated the LLM judge with human annotations before large-scale <span>D1–D5 scoring.</span>
+              </h2>
+            </div>
+          </div>
+          <div class="judge-console">
+            <div class="judge-method">
+              <div class="judge-console-label">
+                <span class="mono">HOW THE JUDGE WAS VALIDATED</span
+                ><span>2 humans · 100 articles</span>
+              </div>
+              <div class="judge-alpha-intro">
+                <math
+                  tabindex="0"
+                  display="block"
+                  aria-label="Ordinal Krippendorff alpha equals one minus observed disagreement divided by expected disagreement"
+                >
+                  <msub><mi>α</mi><mtext>ord</mtext></msub>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                  <mo>−</mo>
+                  <mfrac
+                    ><msub><mi>D</mi><mi>o</mi></msub
+                    ><msub><mi>D</mi><mi>e</mi></msub></mfrac
+                  >
+                </math>
+                <div class="judge-alpha-copy">
+                  <p class="alpha-method-note">
+                    A standard reliability measure widely used in content
+                    analysis, human coding, media research, and communication
+                    research (<a
+                      href="https://onlinelibrary.wiley.com/doi/10.1111/j.1468-2958.2004.tb00738.x"
+                      target="_blank"
+                      rel="noopener"
+                      >Krippendorff, 2004</a
+                    >;
+                    <a
+                      href="https://us.sagepub.com/en-us/nam/content-analysis/book258450"
+                      target="_blank"
+                      rel="noopener"
+                      >2018</a
+                    >).
+                  </p>
+                  <dl class="alpha-definition-list">
+                    <div>
+                      <dt>
+                        Observed <var>D<sub>o</sub></var>
+                      </dt>
+                      <dd>
+                        The judge and a human score the same articles
+                        differently.
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>
+                        Random <var>D<sub>e</sub></var>
+                      </dt>
+                      <dd>
+                        A chance baseline: randomly match the judge’s scores
+                        with human scores from different articles, then measure
+                        their disagreement.
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Agreement α</dt>
+                      <dd>Closer to 1 means stronger human–judge agreement.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <p class="judge-human-note">
+                Two annotators score 100 articles following standard
+                content-analysis and human-coding procedures.
+              </p>
+              <a class="judge-prompts-link" href="judge-prompts.html">
+                <span class="mono">METHODS & MATERIALS</span>
+                <strong>Check out our judge prompts</strong>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="alpha-panel">
+              <div class="alpha-panel-head">
+                <div>
+                  <span class="mono">GPT-5.2 ↔ TWO HUMANS</span>
+                  <h3>GPT-5.2 agrees with human annotators.</h3>
+                </div>
+              </div>
+              <div class="alpha-key" aria-hidden="true">
+                <span><i class="human-one"></i>Human 1</span>
+                <span><i class="human-two"></i>Human 2</span>
+                <span>Tentative agreement ≥ .667</span>
+                <span>Reliable agreement ≥ .800</span>
+              </div>
+              <div class="alpha-rows">
+                <div
+                  class="alpha-row"
+                  style="--dimension-color: var(--d1-color)"
+                  aria-label="D1 Checkability: GPT-5.2 agreement with Human 1 is 0.842 and with Human 2 is 0.702"
+                >
+                  <span class="alpha-dimension"><b>D1</b>Checkability</span>
+                  <div class="alpha-track" aria-hidden="true">
+                    <i class="alpha-threshold tentative"></i>
+                    <i class="alpha-threshold reliable"></i>
+                    <span
+                      class="alpha-marker human-one"
+                      style="left: 84.2%"
+                    ></span>
+                    <span
+                      class="alpha-marker human-two"
+                      style="left: 70.2%"
+                    ></span>
+                  </div>
+                  <span class="alpha-values">.702–.842</span>
+                </div>
+                <div
+                  class="alpha-row"
+                  style="--dimension-color: var(--d2-color)"
+                  aria-label="D2 Harm Significance: GPT-5.2 agreement with Human 1 is 0.707 and with Human 2 is 0.717"
+                >
+                  <span class="alpha-dimension"
+                    ><b>D2</b>Harm Significance</span
+                  >
+                  <div class="alpha-track" aria-hidden="true">
+                    <i class="alpha-threshold tentative"></i>
+                    <i class="alpha-threshold reliable"></i>
+                    <span
+                      class="alpha-marker human-one"
+                      style="left: 70.7%"
+                    ></span>
+                    <span
+                      class="alpha-marker human-two"
+                      style="left: 71.7%"
+                    ></span>
+                  </div>
+                  <span class="alpha-values">.707–.717</span>
+                </div>
+                <div
+                  class="alpha-row"
+                  style="--dimension-color: var(--d3-color)"
+                  aria-label="D3 Source Credibility Signals: GPT-5.2 agreement with Human 1 is 0.828 and with Human 2 is 0.822"
+                >
+                  <span class="alpha-dimension"
+                    ><b>D3</b>Source Credibility Signals</span
+                  >
+                  <div class="alpha-track" aria-hidden="true">
+                    <i class="alpha-threshold tentative"></i>
+                    <i class="alpha-threshold reliable"></i>
+                    <span
+                      class="alpha-marker human-one"
+                      style="left: 82.8%"
+                    ></span>
+                    <span
+                      class="alpha-marker human-two"
+                      style="left: 82.2%"
+                    ></span>
+                  </div>
+                  <span class="alpha-values">.822–.828</span>
+                </div>
+                <div
+                  class="alpha-row"
+                  style="--dimension-color: var(--d4-color)"
+                  aria-label="D4 Imposter Legitimacy: GPT-5.2 agreement with Human 1 is 0.729 and with Human 2 is 0.691"
+                >
+                  <span class="alpha-dimension"
+                    ><b>D4</b>Imposter Legitimacy</span
+                  >
+                  <div class="alpha-track" aria-hidden="true">
+                    <i class="alpha-threshold tentative"></i>
+                    <i class="alpha-threshold reliable"></i>
+                    <span
+                      class="alpha-marker human-one"
+                      style="left: 72.9%"
+                    ></span>
+                    <span
+                      class="alpha-marker human-two"
+                      style="left: 69.1%"
+                    ></span>
+                  </div>
+                  <span class="alpha-values">.691–.729</span>
+                </div>
+                <div
+                  class="alpha-row"
+                  style="--dimension-color: var(--d5-color)"
+                  aria-label="D5 Verification Cost: GPT-5.2 agreement with Human 1 is 0.728 and with Human 2 is 0.805"
+                >
+                  <span class="alpha-dimension"
+                    ><b>D5</b>Verification Cost</span
+                  >
+                  <div class="alpha-track" aria-hidden="true">
+                    <i class="alpha-threshold tentative"></i>
+                    <i class="alpha-threshold reliable"></i>
+                    <span
+                      class="alpha-marker human-one"
+                      style="left: 72.8%"
+                    ></span>
+                    <span
+                      class="alpha-marker human-two"
+                      style="left: 80.5%"
+                    ></span>
+                  </div>
+                  <span class="alpha-values">.728–.805</span>
+                </div>
+              </div>
+              <div
+                class="alpha-scale"
+                role="img"
+                aria-label="Krippendorff alpha scale from zero to one"
+              >
+                <span aria-hidden="true"></span>
+                <div class="alpha-scale-ticks" aria-hidden="true">
+                  <span>0</span><span>.2</span><span>.4</span><span>.6</span
+                  ><span>.8</span><span>1.0</span>
+                </div>
+                <span class="alpha-scale-symbol" aria-hidden="true">α</span>
+              </div>
+              <div class="alpha-verdict">
+                <p>
+                  All 10 GPT-5.2–human comparisons are α ≥ .667. D3 is α ≥ .800
+                  for both annotators.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="benchmark"
+        class="benchmark-section section-band"
+        aria-labelledby="benchmark-title"
+      >
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <h2 id="benchmark-title">
+                Leaderboard
+              </h2>
+            </div>
+            <p class="benchmark-task-note">
+              <span><strong>Fabrication</strong> generates a plausible but false or misleading article from a topic.</span>
+              <span><strong>Rewrite</strong> transforms a factual source article into a misleading variant while preserving surface plausibility.</span>
+            </p>
+          </div>
+          <div id="benchmark-app">
+            <p class="loading-message">Loading the local benchmark snapshot…</p>
+          </div>
+          <noscript><p>Enable JavaScript to use the interactive benchmark.</p></noscript>
+        </div>
+      </section>
+      <section
+        id="dataset"
+        class="dataset-section section-band"
+        aria-labelledby="dataset-title"
+      >
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div>
+              <h2 id="dataset-title">Explore the dataset.</h2>
+              <a class="section-link" href="analysis.html">Explore analysis results <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="research-warning">
+            <span class="warning-icon" aria-hidden="true">!</span>
+            <p>
+              <strong>Content Warning.</strong> This site contains synthetic
+              examples of potentially harmful misinformation and persuasive
+              narratives, generated in controlled settings solely for AI Safety
+              research. Prompts are de-identified and omit specific persons,
+              institutions, or countries; model outputs may nevertheless
+              mention real or fictional entities. Where relevant, these
+              references are fact-checked and annotated. The materials are for
+              scientific analysis only and do not reflect the authors’ views.
+            </p>
+          </div>
+          <div id="dataset-app">
+            <p class="loading-message">Preparing the dataset explorer…</p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="paper"
+        class="paper-section section-wrap"
+        aria-labelledby="paper-title"
+      >
+        <div class="paper-layout">
+          <div class="paper-preview">
+            <img src="assets/paper-first-page.png?v=2111302" alt="First page of the VEX-Bench paper" width="1080" height="1398" loading="lazy" decoding="async" />
+          </div>
+          <div class="paper-info">
+            <h2 id="paper-title">
+              VEX-Bench: Benchmarking Verification Complexity
+              <span class="paper-title-subject">of LLM-Generated Misinformation</span>
+            </h2>
+            <p class="authors">
+              <a href="https://hanxunh.github.io/" target="_blank" rel="noopener">Hanxun Huang</a><sup>1</sup>,
+              <a href="https://github.com/wuyoscar" target="_blank" rel="noopener">Yutao Wu</a><sup>2</sup>,
+              <a href="https://www.admscentre.org.au/mike-wang/" target="_blank" rel="noopener">Qizhou Wang</a><sup>1</sup>,
+              <a href="https://findanexpert.unimelb.edu.au/profile/1053419-silvia-monta%C3%B1a-ni%C3%B1o" target="_blank" rel="noopener">Silvia Montaña-Niño</a><sup>1</sup>,
+              <a href="https://bboylyg.github.io/" target="_blank" rel="noopener">Yige Li</a><sup>3</sup>,
+              <a href="https://x-zheng16.github.io/" target="_blank" rel="noopener">Xiang Zheng</a><sup>4</sup>,
+              <a href="https://research.qut.edu.au/adms/people/elif-buse-doyuran/" target="_blank" rel="noopener">Elif Buse Doyuran</a><sup>5</sup>,
+              <a href="https://research.qut.edu.au/dmrc/people/phoebe-matich/" target="_blank" rel="noopener">Phoebe Matich</a><sup>5</sup>,
+              <a href="https://experts.deakin.edu.au/36542-xiao-liu" target="_blank" rel="noopener">Xiao Liu</a><sup>2</sup>,
+              <a href="http://xingjunma.com/" target="_blank" rel="noopener">Xingjun Ma</a><sup>6</sup>,
+              <a href="https://findanexpert.unimelb.edu.au/profile/639922-sarah-monazam-erfani" target="_blank" rel="noopener">Sarah Erfani</a><sup>1</sup>,
+              <a href="https://findanexpert.unimelb.edu.au/profile/6335-christopher-leckie" target="_blank" rel="noopener">Christopher Leckie</a><sup>1</sup>
+            </p>
+            <div class="affiliation-logos" aria-label="Affiliated universities">
+              <a href="https://www.unimelb.edu.au/" target="_blank" rel="noopener" aria-label="The University of Melbourne website">
+                <span class="affiliation-mark"><img src="assets/unimelb-logo.svg" alt="" width="400" height="400" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>1</sup>The University of Melbourne</span>
+              </a>
+              <a href="https://www.deakin.edu.au/" target="_blank" rel="noopener" aria-label="Deakin University website">
+                <span class="affiliation-mark"><img src="assets/deakin-logo.svg" alt="" width="1035" height="1034" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>2</sup>Deakin University</span>
+              </a>
+              <a href="https://www.smu.edu.sg/" target="_blank" rel="noopener" aria-label="Singapore Management University website">
+                <span class="affiliation-mark"><img src="assets/smu-logo.png" alt="" width="610" height="327" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>3</sup>Singapore Management University</span>
+              </a>
+              <a href="https://www.cityu.edu.hk/" target="_blank" rel="noopener" aria-label="City University of Hong Kong website">
+                <span class="affiliation-mark"><img src="assets/cityu-logo.jpg" alt="" width="594" height="336" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>4</sup>City University of Hong Kong</span>
+              </a>
+              <a href="https://www.qut.edu.au/" target="_blank" rel="noopener" aria-label="Queensland University of Technology website">
+                <span class="affiliation-mark"><img src="assets/qut-logo.jpg" alt="" width="3648" height="1227" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>5</sup>Queensland University of Technology</span>
+              </a>
+              <a href="https://www.fudan.edu.cn/en/" target="_blank" rel="noopener" aria-label="Fudan University website">
+                <span class="affiliation-mark"><img src="assets/fudan-logo.png" alt="" width="724" height="724" loading="lazy" decoding="async" /></span>
+                <span class="affiliation-name"><sup>6</sup>Fudan University</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <section class="acknowledgment" aria-labelledby="acknowledgment-title">
+          <h3 id="acknowledgment-title">Acknowledgment</h3>
+          <div class="acknowledgment-copy">
+            <p>This research was conducted by the ARC Centre of Excellence for Automated Decision-Making and Society (CE200100005), and funded by the Australian Government through the Australian Research Council.</p>
+            <p>The authors would like to thank <a href="https://au.linkedin.com/in/devimallal" target="_blank" rel="noopener">Devi Mallal</a> from the Australian Broadcasting Corporation’s News Verify for independently reviewing our human annotations and for providing valuable constructive feedback that contributed to the development of this work.</p>
+          </div>
+          <div class="acknowledgment-logos" role="region" aria-label="Acknowledged research organisations" tabindex="0">
+            <a href="https://www.admscentre.org.au/" target="_blank" rel="noopener"><img src="assets/adms-acknowledgment.png" alt="ARC Centre of Excellence for Automated Decision-Making and Society (ADM+S)" width="396" height="192" loading="lazy" decoding="async" /></a>
+            <a href="https://internetobservatory.org.au/" target="_blank" rel="noopener"><img src="assets/aio-acknowledgment.jpg?v=2" alt="Australian Internet Observatory" width="960" height="353" loading="lazy" decoding="async" /></a>
+            <a class="arc-logo" href="https://www.arc.gov.au/" target="_blank" rel="noopener"><img src="assets/arc-acknowledgment.svg" alt="Australian Research Council" width="251" height="56" loading="lazy" decoding="async" /></a>
+          </div>
+          <p class="acknowledgment-logos-hint">Scroll to view all three organisations.</p>
+        </section>
+        <div class="citation-box">
+          <div>
+            <h3>Cite VEX-Bench</h3>
+          </div>
+          <button id="copy-citation" class="button secondary" type="button">
+            Copy BibTeX
+          </button>
+          <pre
+            id="citation"
+            tabindex="0"
+            role="region"
+            aria-label="BibTeX citation"
+          >
+@inproceedings{huang2026vexbench,
+  title={VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation},
+  author={Huang, Hanxun and Wu, Yutao and Wang, Qizhou and Montaña-Niño, Silvia and Li, Yige and Zheng, Xiang and Doyuran, Elif Buse and Matich, Phoebe and Liu, Xiao and Ma, Xingjun and Erfani, Sarah and Leckie, Christopher},
+  booktitle={The Fortieth Annual Conference on Neural Information Processing Systems Evaluations and Datasets Track},
+  year={2026},
+  url={https://openreview.net/forum?id=xYPvwioYRg}
+}</pre
+          >
+          <span id="citation-status" class="small-text" role="status"></span>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="section-wrap">
+        <a href="#" class="brand">VEX<span class="brand-light">-Bench</span></a>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" hidden></div>
+  </body>
+</html>

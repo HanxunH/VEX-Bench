@@ -1,0 +1,255 @@
+{
+  "sources": {
+    "gpt52": "results/benchmark_cw_optimization/scores/testset100_v25_52.json",
+    "gemini31": "results/benchmark_cw_optimization/scores/testset100_v25_gemini.json",
+    "opus47": "results/benchmark_cw_optimization/scores/testset100_v25_opus47.json",
+    "human1": "results/benchmark_cw_optimization/scores/testset100_hanxun_v3.json",
+    "human2": "results/benchmark_cw_optimization/scores/testset100_mike_v3.json"
+  },
+  "sample": {
+    "sharedArticles": 99,
+    "calibrationAnchorsIncluded": true,
+    "refusalTextExcluded": true
+  },
+  "raters": [
+    {
+      "id": "gpt52",
+      "label": "GPT-5.2",
+      "kind": "judge"
+    },
+    {
+      "id": "gemini31",
+      "label": "Gemini 3.1",
+      "kind": "judge"
+    },
+    {
+      "id": "opus47",
+      "label": "Opus 4.7",
+      "kind": "judge"
+    },
+    {
+      "id": "human1",
+      "label": "Human 1",
+      "kind": "human"
+    },
+    {
+      "id": "human2",
+      "label": "Human 2",
+      "kind": "human"
+    }
+  ],
+  "dimensions": [
+    {
+      "key": "D1",
+      "label": "D1 Checkability"
+    },
+    {
+      "key": "D2",
+      "label": "D2 Harm"
+    },
+    {
+      "key": "D3",
+      "label": "D3 Source"
+    },
+    {
+      "key": "D4",
+      "label": "D4 Imposter"
+    },
+    {
+      "key": "D5",
+      "label": "D5 VerifCost"
+    }
+  ],
+  "pairs": [
+    {
+      "a": "gpt52",
+      "b": "gemini31",
+      "alpha": [
+        0.629,
+        0.559,
+        0.779,
+        0.719,
+        0.55
+      ],
+      "mean": 0.647,
+      "n": [
+        93,
+        93,
+        93,
+        93,
+        93
+      ]
+    },
+    {
+      "a": "gpt52",
+      "b": "opus47",
+      "alpha": [
+        0.736,
+        0.624,
+        0.818,
+        0.656,
+        0.549
+      ],
+      "mean": 0.676,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    },
+    {
+      "a": "gpt52",
+      "b": "human1",
+      "alpha": [
+        0.842,
+        0.707,
+        0.828,
+        0.729,
+        0.728
+      ],
+      "mean": 0.767,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    },
+    {
+      "a": "gpt52",
+      "b": "human2",
+      "alpha": [
+        0.702,
+        0.717,
+        0.822,
+        0.691,
+        0.805
+      ],
+      "mean": 0.747,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    },
+    {
+      "a": "gemini31",
+      "b": "opus47",
+      "alpha": [
+        0.513,
+        0.561,
+        0.704,
+        0.747,
+        0.599
+      ],
+      "mean": 0.625,
+      "n": [
+        93,
+        93,
+        93,
+        93,
+        93
+      ]
+    },
+    {
+      "a": "gemini31",
+      "b": "human1",
+      "alpha": [
+        0.674,
+        0.631,
+        0.735,
+        0.693,
+        0.588
+      ],
+      "mean": 0.664,
+      "n": [
+        93,
+        93,
+        93,
+        93,
+        93
+      ]
+    },
+    {
+      "a": "gemini31",
+      "b": "human2",
+      "alpha": [
+        0.482,
+        0.641,
+        0.687,
+        0.64,
+        0.525
+      ],
+      "mean": 0.595,
+      "n": [
+        93,
+        93,
+        93,
+        93,
+        93
+      ]
+    },
+    {
+      "a": "opus47",
+      "b": "human1",
+      "alpha": [
+        0.708,
+        0.675,
+        0.714,
+        0.628,
+        0.679
+      ],
+      "mean": 0.681,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    },
+    {
+      "a": "opus47",
+      "b": "human2",
+      "alpha": [
+        0.819,
+        0.651,
+        0.782,
+        0.667,
+        0.548
+      ],
+      "mean": 0.694,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    },
+    {
+      "a": "human1",
+      "b": "human2",
+      "alpha": [
+        0.743,
+        0.848,
+        0.826,
+        0.858,
+        0.754
+      ],
+      "mean": 0.806,
+      "n": [
+        99,
+        99,
+        99,
+        99,
+        99
+      ]
+    }
+  ]
+}
