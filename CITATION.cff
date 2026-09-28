@@ -1,0 +1,60 @@
+cff-version: 1.2.0
+message: "If you use VEX-Bench, please cite the paper below."
+title: "VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation"
+authors:
+  - family-names: Huang
+    given-names: Hanxun
+  - family-names: Wu
+    given-names: Yutao
+  - family-names: Wang
+    given-names: Qizhou
+  - family-names: Montaña-Niño
+    given-names: Silvia
+  - family-names: Li
+    given-names: Yige
+  - family-names: Zheng
+    given-names: Xiang
+  - family-names: Doyuran
+    given-names: Elif Buse
+  - family-names: Matich
+    given-names: Phoebe
+  - family-names: Liu
+    given-names: Xiao
+  - family-names: Ma
+    given-names: Xingjun
+  - family-names: Erfani
+    given-names: Sarah
+  - family-names: Leckie
+    given-names: Christopher
+url: "https://github.com/HanxunH/VEX-Bench"
+preferred-citation:
+  type: conference-paper
+  title: "VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation"
+  authors:
+    - family-names: Huang
+      given-names: Hanxun
+    - family-names: Wu
+      given-names: Yutao
+    - family-names: Wang
+      given-names: Qizhou
+    - family-names: Montaña-Niño
+      given-names: Silvia
+    - family-names: Li
+      given-names: Yige
+    - family-names: Zheng
+      given-names: Xiang
+    - family-names: Doyuran
+      given-names: Elif Buse
+    - family-names: Matich
+      given-names: Phoebe
+    - family-names: Liu
+      given-names: Xiao
+    - family-names: Ma
+      given-names: Xingjun
+    - family-names: Erfani
+      given-names: Sarah
+    - family-names: Leckie
+      given-names: Christopher
+  collection-title: "The Fortieth Annual Conference on Neural Information Processing Systems Evaluations and Datasets Track"
+  year: 2026
+  url: "https://openreview.net/forum?id=xYPvwioYRg"
