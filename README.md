@@ -1,5 +1,11 @@
 # VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation
 
+<div align="center">
+  <a href="https://huggingface.co/datasets/hanxunh/VEX-Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-VEX--Bench-blue.svg" alt="Hugging Face dataset"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-green.svg" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/made_with-Python-blue.svg" alt="Made with Python">
+</div>
+
 VEX-Bench evaluates what LLMs produce after misinformation-elicitation prompts, not only whether they comply. It scores five dimensions of verification burden—checkability, harm significance, source credibility signals, imposter legitimacy, and verification cost—across 7 models, 7 methods, 2 tasks, and 60 topics (5,880 conditions).
 
 [Paper](https://openreview.net/forum?id=xYPvwioYRg) · [Interactive results](https://hanxunh.github.io/VEX-Bench/) · [Dataset](https://huggingface.co/datasets/hanxunh/VEX-Bench)

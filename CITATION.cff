@@ -4,28 +4,39 @@ title: "VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinfo
 authors:
   - family-names: Huang
     given-names: Hanxun
+    orcid: "https://orcid.org/0000-0002-2793-6680"
   - family-names: Wu
     given-names: Yutao
+    orcid: "https://orcid.org/0000-0001-8598-3437"
   - family-names: Wang
     given-names: Qizhou
   - family-names: Montaña-Niño
     given-names: Silvia
+    orcid: "https://orcid.org/0000-0002-4238-0801"
   - family-names: Li
     given-names: Yige
+    orcid: "https://orcid.org/0000-0001-5032-8571"
   - family-names: Zheng
     given-names: Xiang
+    orcid: "https://orcid.org/0000-0002-2990-2169"
   - family-names: Doyuran
     given-names: Elif Buse
+    orcid: "https://orcid.org/0000-0003-3263-6209"
   - family-names: Matich
     given-names: Phoebe
+    orcid: "https://orcid.org/0000-0003-2015-3736"
   - family-names: Liu
     given-names: Xiao
+    orcid: "https://orcid.org/0000-0001-8400-5754"
   - family-names: Ma
     given-names: Xingjun
+    orcid: "https://orcid.org/0000-0003-2099-4973"
   - family-names: Erfani
     given-names: Sarah
+    orcid: "https://orcid.org/0000-0003-0885-0643"
   - family-names: Leckie
     given-names: Christopher
+    orcid: "https://orcid.org/0000-0002-4388-0517"
 url: "https://github.com/HanxunH/VEX-Bench"
 preferred-citation:
   type: conference-paper
@@ -33,28 +44,39 @@ preferred-citation:
   authors:
     - family-names: Huang
       given-names: Hanxun
+      orcid: "https://orcid.org/0000-0002-2793-6680"
     - family-names: Wu
       given-names: Yutao
+      orcid: "https://orcid.org/0000-0001-8598-3437"
     - family-names: Wang
       given-names: Qizhou
     - family-names: Montaña-Niño
       given-names: Silvia
+      orcid: "https://orcid.org/0000-0002-4238-0801"
     - family-names: Li
       given-names: Yige
+      orcid: "https://orcid.org/0000-0001-5032-8571"
     - family-names: Zheng
       given-names: Xiang
+      orcid: "https://orcid.org/0000-0002-2990-2169"
     - family-names: Doyuran
       given-names: Elif Buse
+      orcid: "https://orcid.org/0000-0003-3263-6209"
     - family-names: Matich
       given-names: Phoebe
+      orcid: "https://orcid.org/0000-0003-2015-3736"
     - family-names: Liu
       given-names: Xiao
+      orcid: "https://orcid.org/0000-0001-8400-5754"
     - family-names: Ma
       given-names: Xingjun
+      orcid: "https://orcid.org/0000-0003-2099-4973"
     - family-names: Erfani
       given-names: Sarah
+      orcid: "https://orcid.org/0000-0003-0885-0643"
     - family-names: Leckie
       given-names: Christopher
+      orcid: "https://orcid.org/0000-0002-4388-0517"
   collection-title: "The Fortieth Annual Conference on Neural Information Processing Systems Evaluations and Datasets Track"
   year: 2026
   url: "https://openreview.net/forum?id=xYPvwioYRg"
