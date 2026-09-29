@@ -1,6 +1,7 @@
 # VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation
 
 <div align="center">
+  <a href="https://arxiv.org/abs/2609.35028"><img src="https://img.shields.io/badge/arXiv-2609.35028-b31b1b.svg?logo=arxiv" alt="arXiv:2609.35028"></a>
   <a href="https://huggingface.co/datasets/hanxunh/VEX-Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-VEX--Bench-blue.svg" alt="Hugging Face dataset"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-green.svg" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/made_with-Python-blue.svg" alt="Made with Python">
