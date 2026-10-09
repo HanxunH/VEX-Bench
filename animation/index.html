@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VEX-Bench · Live animation</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f9ff; color: #000f46; }
+    #film { display: block; width: 100%; height: 100%; object-fit: contain; }
+    #load-state { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font: 16px system-ui, sans-serif; }
+    #load-state[hidden] { display: none; }
+  </style>
+  <script>window.VEX_DIRECTIONS = {};</script>
+  <script src="vendor/huashu/util.js" defer></script>
+  <script src="vendor/huashu/motion.js" defer></script>
+  <script src="vendor/huashu/typo.js" defer></script>
+  <script src="vendor/huashu/collage.js" defer></script>
+  <script src="directions/b.js" defer></script>
+  <script src="dimension-art.js" defer></script>
+  <script src="dimension-scene.js" defer></script>
+  <script src="vex-score-panel.js" defer></script>
+  <script src="evaluation-scene.js" defer></script>
+  <script src="vex-scenes.js" defer></script>
+  <script src="film.js" defer></script>
+  <script src="eras.js" defer></script>
+  <script src="engine.js" defer></script>
+  <script src="engine-bind.js" defer></script>
+  <script src="player.js?v=3" defer></script>
+</head>
+<body>
+  <canvas id="film" role="img" aria-label="VEX-Bench overview animation">VEX-Bench: evaluating verification complexity across five dimensions.</canvas>
+  <p id="load-state" role="status">Loading animation…</p>
+  <audio id="score" src="score.mp3?v=5" preload="auto" aria-hidden="true"></audio>
+</body>
+</html>

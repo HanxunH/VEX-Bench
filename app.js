@@ -5,11 +5,6 @@
     for (const id of ["benchmark-app", "dataset-app"])
       document.getElementById(id).textContent =
         "The local data snapshot could not be loaded. Reload the page and try again.";
-    document.getElementById("hero-profile-label").textContent =
-      "Benchmark profile unavailable";
-    document
-      .getElementById("hero-radar")
-      .setAttribute("aria-label", "Verification profile unavailable");
     return;
   }
   const modelIcons = window.VEX_MODEL_ICONS;
@@ -58,6 +53,7 @@
       toast.hidden = true;
     }, 3400);
   };
+  const allDimensions = data.dimensions.map((_, index) => index);
   const defaultScope = () => ({
     task: "all",
     domain: "all",
@@ -107,7 +103,6 @@
     if (!profileRows.has(key)) profileRows.set(key, []);
     profileRows.get(key).push(row);
   }
-  const allDimensions = data.dimensions.map((_, i) => i);
   const modelProfiles = [];
   for (const model of data.models) {
     for (const method of data.methods) {

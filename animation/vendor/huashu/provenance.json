@@ -1,0 +1,59 @@
+{
+  "repository": "https://github.com/alchaincyf/huashu-art-motion",
+  "license": "MIT",
+  "copiedFrom": "installed huashu-art-motion skill",
+  "modifications": [
+    "Final newline normalized by file view/patch; JavaScript source otherwise identical."
+  ],
+  "files": [
+    {
+      "file": "util.js",
+      "sourceSha256": "86045b05656183cd7017e43fb891aa65d1a1e76477885c4dbee81635ee8b7a1d",
+      "copiedSha256": "342ab68b64a4eae87dd1d3fa2f56d38aed8f9e4c97cf4b0523643e236a29a808",
+      "matchesIgnoringFinalNewline": true,
+      "source": "https://github.com/alchaincyf/huashu-art-motion/blob/main/scripts/engine/lib/util.js"
+    },
+    {
+      "file": "motion.js",
+      "sourceSha256": "7e70b8ef328c7497fe1403d37700fcdfbb2cc9d2175f16ea46ae3e69b49dbe15",
+      "copiedSha256": "9e69d25de9761d8bebee205076ad3acc5e9b64dce5af565cdac4a56cf0a0db51",
+      "matchesIgnoringFinalNewline": true,
+      "source": "https://github.com/alchaincyf/huashu-art-motion/blob/main/scripts/engine/lib/motion.js"
+    },
+    {
+      "file": "typo.js",
+      "sourceSha256": "30db0cc68145dca22532e487da01aeb3ec97155e8b2c3a0747a009ce6638be8f",
+      "copiedSha256": "a729a270b9bb0ff300571443011b2127e7ed5fc4ade4ec5031702fef99720092",
+      "matchesIgnoringFinalNewline": true,
+      "source": "https://github.com/alchaincyf/huashu-art-motion/blob/main/scripts/engine/lib/typo.js"
+    },
+    {
+      "file": "collage.js",
+      "sourceSha256": "4dcd3d15f8895dc6e3d4f2e4d82766782a4e77876fb863ded9480320b8959d93",
+      "copiedSha256": "da85c5bbe29c5737084231082237879e969e14ee67a7b8045a25a7e6af0ce57b",
+      "matchesIgnoringFinalNewline": true,
+      "source": "https://github.com/alchaincyf/huashu-art-motion/blob/main/scripts/engine/lib/collage.js"
+    }
+  ],
+  "integrations": [
+    {
+      "path": "../../render.py",
+      "source": "scripts/engine/render.py",
+      "sourceSha256": "b7a8bf535f18b8e14e2e1da52a715dfb9923133a7e961499009a0c811f0739ff",
+      "copiedSha256": "b7a8bf535f18b8e14e2e1da52a715dfb9923133a7e961499009a0c811f0739ff",
+      "modifications": []
+    },
+    {
+      "path": "../../engine.js",
+      "source": "scripts/engine/engine.js",
+      "sourceSha256": "2ecd3659912e5e2fed75cc62c8eab974c99dabf1bb773699967b822d2ac05259",
+      "copiedSha256": "1e16562a2aaf8a24ba0a586f90108231cec43b51599c618d8d671a52e07b13e7",
+      "modifications": [
+        "Uses canvas #film and VEX_RUNTIME asset/font bootstrap; exposes real ENGINE_READY.",
+        "Retains upstream era timing and drawEra/renderFrame/renderSolo rendering.",
+        "Removes unused year tags, clip sequences, transition buffers and legacy preview controls.",
+        "Checks the actual Latin film fonts; leaves playback to preview.js."
+      ]
+    }
+  ]
+}

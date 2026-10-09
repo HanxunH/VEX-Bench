@@ -1,0 +1,112 @@
+[
+  {
+    "id": "africa-check",
+    "name": "Africa Check",
+    "url": "https://africacheck.org/",
+    "country": "South Africa",
+    "region": "Africa",
+    "scope": "Independent",
+    "path": "assets/fact-checkers/africa-check.svg",
+    "logoSource": "https://web.archive.org/web/20240101012235id_/https://africacheck.org/themes/custom/africacheck/images/logo.svg",
+    "aboutSource": "https://africacheck.org/who-we-are"
+  },
+  {
+    "id": "chequeado",
+    "name": "Chequeado",
+    "url": "https://chequeado.com/",
+    "country": "Argentina",
+    "region": "South America",
+    "scope": "Independent",
+    "path": "assets/fact-checkers/chequeado.png",
+    "logoSource": "https://chequeado.com/wp-content/uploads/2019/09/favico_512.png",
+    "aboutSource": "https://chequeado.com/conocenos"
+  },
+  {
+    "id": "full-fact",
+    "name": "Full Fact",
+    "url": "https://fullfact.org/",
+    "country": "United Kingdom",
+    "region": "Europe",
+    "scope": "Independent",
+    "path": "assets/fact-checkers/full-fact.png",
+    "logoSource": "https://fullfact.org/static/img/apple-touch-icon.6ad83666ef68.png",
+    "aboutSource": "https://fullfact.org/about/"
+  },
+  {
+    "id": "maldita",
+    "name": "Maldita",
+    "url": "https://maldita.es/",
+    "country": "Spain",
+    "region": "Europe",
+    "scope": "Independent",
+    "path": "assets/fact-checkers/maldita.svg",
+    "logoSource": "https://maldita.es/images/comunidad/isologo.svg",
+    "aboutSource": "https://maldita.es/nosotros-maldita"
+  },
+  {
+    "id": "boom",
+    "name": "BOOM",
+    "url": "https://www.boomlive.in/",
+    "country": "India",
+    "region": "Asia",
+    "scope": "Independent",
+    "path": "assets/fact-checkers/boom.svg",
+    "logoSource": "https://www.boomlive.in/images/logo.svg?v=1",
+    "aboutSource": "https://www.boomlive.in/about-us"
+  },
+  {
+    "id": "afp-fact-check",
+    "name": "AFP Fact Check",
+    "url": "https://factcheck.afp.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/fact-checkers/afp-fact-check.png",
+    "logoSource": "https://factcheck.afp.com/favicon.ico",
+    "aboutSource": "https://factcheck.afp.com/about-afp"
+  },
+  {
+    "id": "politifact",
+    "name": "PolitiFact",
+    "url": "https://www.politifact.com/",
+    "country": "United States",
+    "region": "North America",
+    "scope": "National",
+    "path": "assets/fact-checkers/politifact.png",
+    "logoSource": "https://politifact.com/wp-content/uploads/2026/07/cropped-favicon.png",
+    "aboutSource": "https://www.politifact.com/article/2018/feb/12/principles-truth-o-meter-politifacts-methodology-i/"
+  },
+  {
+    "id": "taiwan-factcheck-center",
+    "name": "Taiwan FactCheck Center",
+    "url": "https://tfc-taiwan.org.tw/",
+    "country": "Taiwan",
+    "region": "Asia",
+    "scope": "National",
+    "path": "assets/fact-checkers/taiwan-factcheck-center.png",
+    "logoSource": "https://tfc-taiwan.org.tw/wp-content/uploads/2024/10/tfc-logo-3.png",
+    "aboutSource": "https://tfc-taiwan.org.tw/about/"
+  },
+  {
+    "id": "aap-factcheck",
+    "name": "AAP FactCheck",
+    "url": "https://www.aap.com.au/factcheck/",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "National",
+    "path": "assets/fact-checkers/aap-factcheck.png",
+    "logoSource": "https://www.aap.com.au/_resources/themes/starter/images/favicon.png?m=1785822017",
+    "aboutSource": "https://www.aap.com.au/factcheck/who-we-are/"
+  },
+  {
+    "id": "abc-news-verify",
+    "name": "ABC NEWS Verify",
+    "url": "https://www.abc.net.au/news/topic/disinformation-and-misinformation",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "National",
+    "path": "assets/fact-checkers/abc-news-verify.png",
+    "logoSource": "https://www.abc.net.au/news-assets/touchicon-abc.png",
+    "aboutSource": "https://www.abc.net.au/news/about-abc-news/our-purpose"
+  }
+]

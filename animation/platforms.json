@@ -1,0 +1,123 @@
+[
+  {
+    "id": "youtube",
+    "name": "YouTube",
+    "url": "https://www.youtube.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/youtube.png",
+    "logoSource": "https://www.youtube.com/img/desktop/yt_1200.png",
+    "aboutSource": "https://www.youtube.com/about/"
+  },
+  {
+    "id": "facebook",
+    "name": "Facebook",
+    "url": "https://www.facebook.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/facebook.png",
+    "logoSource": "https://www.facebook.com/images/fb_icon_325x325.png",
+    "aboutSource": "https://www.facebook.com/about/"
+  },
+  {
+    "id": "tiktok",
+    "name": "TikTok",
+    "url": "https://www.tiktok.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/tiktok.png",
+    "logoSource": "https://www.tiktok.com/apple-touch-icon.png",
+    "aboutSource": "https://www.tiktok.com/about"
+  },
+  {
+    "id": "x",
+    "name": "X",
+    "url": "https://x.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/x.png",
+    "logoSource": "https://x.com/apple-touch-icon.png",
+    "aboutSource": "https://about.x.com/"
+  },
+  {
+    "id": "reddit",
+    "name": "Reddit",
+    "url": "https://www.reddit.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/reddit.png",
+    "logoSource": "https://www.redditstatic.com/shreddit/assets/favicon/192x192.png",
+    "aboutSource": "https://www.redditinc.com/"
+  },
+  {
+    "id": "whatsapp",
+    "name": "WhatsApp",
+    "url": "https://www.whatsapp.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/whatsapp.svg",
+    "logoSource": "https://static.whatsapp.net/rsrc.php/y1/r/FJbTMJqMap7.svg",
+    "aboutSource": "https://www.whatsapp.com/about"
+  },
+  {
+    "id": "weibo",
+    "name": "Weibo",
+    "url": "https://weibo.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/weibo.png",
+    "logoSource": "https://img.t.sinajs.cn/t6/style/images/global_nav/WB_logo-x2.png",
+    "aboutSource": "https://open.weibo.com/"
+  },
+  {
+    "id": "line",
+    "name": "LINE",
+    "url": "https://line.me/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/line.png",
+    "logoSource": "https://www.line.me/static/img/apple-touch-icon-180x180.png",
+    "aboutSource": "https://line.me/en/"
+  },
+  {
+    "id": "instagram",
+    "name": "Instagram",
+    "url": "https://www.instagram.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/instagram.png",
+    "logoSource": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+    "aboutSource": "https://about.instagram.com/"
+  },
+  {
+    "id": "snapchat",
+    "name": "Snapchat",
+    "url": "https://www.snapchat.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/snapchat.png",
+    "logoSource": "https://www.snapchat.com/apple-touch-icon.png",
+    "aboutSource": "https://www.snap.com/?lang=en-US"
+  },
+  {
+    "id": "threads",
+    "name": "Threads",
+    "url": "https://www.threads.com/",
+    "country": "Global",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/platforms/threads.png",
+    "logoSource": "https://www.threads.net/favicon.ico",
+    "aboutSource": "https://help.instagram.com/769983657850450"
+  }
+]

@@ -1,0 +1,233 @@
+[
+  {
+    "id": "reuters",
+    "name": "Reuters",
+    "url": "https://www.reuters.com/",
+    "country": "United Kingdom",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/newsrooms/reuters.svg",
+    "logoSource": "https://reutersagency.com/hubfs/reuters-logo.svg",
+    "aboutSource": "https://reutersagency.com/"
+  },
+  {
+    "id": "ap",
+    "name": "Associated Press",
+    "url": "https://apnews.com/",
+    "country": "United States",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/newsrooms/ap.svg",
+    "logoSource": "https://assets.apnews.com/19/66/bc546486408c8595f01753a9fbeb/ap-logo-176-by-208.svg",
+    "aboutSource": "https://www.ap.org/about/"
+  },
+  {
+    "id": "bbc",
+    "name": "BBC",
+    "url": "https://www.bbc.com/",
+    "country": "United Kingdom",
+    "region": "Europe",
+    "scope": "National",
+    "path": "assets/newsrooms/bbc.svg",
+    "logoSource": "https://www.bbc.com/",
+    "aboutSource": "https://www.bbc.com/aboutthebbc"
+  },
+  {
+    "id": "al-jazeera",
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/",
+    "country": "Qatar",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/newsrooms/al-jazeera.png",
+    "logoSource": "https://www.aljazeera.com/images/logo_aje.png",
+    "aboutSource": "https://www.aljazeera.com/about-us"
+  },
+  {
+    "id": "dw",
+    "name": "DW",
+    "url": "https://www.dw.com/",
+    "country": "Germany",
+    "region": "Global",
+    "scope": "Global",
+    "path": "assets/newsrooms/dw.png",
+    "logoSource": "https://www.dw.com/images/icons/favicon-180x180.png",
+    "aboutSource": "https://corporate.dw.com/en/who-we-are/s-3325"
+  },
+  {
+    "id": "nhk",
+    "name": "NHK WORLD-JAPAN",
+    "url": "https://www3.nhk.or.jp/nhkworld/",
+    "country": "Japan",
+    "region": "Asia",
+    "scope": "National",
+    "path": "assets/newsrooms/nhk.png",
+    "logoSource": "https://www3.nhk.or.jp/nhkworld/common/site_images/nw_webapp_152x152.png",
+    "aboutSource": "https://www3.nhk.or.jp/nhkworld/en/about/"
+  },
+  {
+    "id": "cna",
+    "name": "CNA",
+    "url": "https://www.channelnewsasia.com/",
+    "country": "Singapore",
+    "region": "Asia",
+    "scope": "National",
+    "path": "assets/newsrooms/cna.svg",
+    "logoSource": "https://www.channelnewsasia.com/sites/default/themes/mc_cna_theme/images/logo.svg",
+    "aboutSource": "https://www.channelnewsasia.com/about-us"
+  },
+  {
+    "id": "abc",
+    "name": "ABC News",
+    "url": "https://www.abc.net.au/news/",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "National",
+    "path": "assets/newsrooms/abc.png",
+    "logoSource": "https://www.abc.net.au/news-assets/touchicon-abc.png",
+    "aboutSource": "https://www.abc.net.au/about"
+  },
+  {
+    "id": "el-pais",
+    "name": "El País",
+    "url": "https://elpais.com/",
+    "country": "Spain",
+    "region": "Europe",
+    "scope": "National",
+    "path": "assets/newsrooms/el-pais.svg",
+    "logoSource": "https://static.elpais.com/dist/resources/images/logos/primary/el-pais-50.svg",
+    "aboutSource": "https://elpais.com/"
+  },
+  {
+    "id": "folha",
+    "name": "Folha de S.Paulo",
+    "url": "https://www.folha.uol.com.br/",
+    "country": "Brazil",
+    "region": "South America",
+    "scope": "National",
+    "path": "assets/newsrooms/folha.svg",
+    "logoSource": "https://f.i.uol.com.br/institucional/common/logotipo/folha.svg",
+    "aboutSource": "https://www1.folha.uol.com.br/institucional/"
+  },
+  {
+    "id": "daily-nation",
+    "name": "Daily Nation",
+    "url": "https://nation.africa/",
+    "country": "Kenya",
+    "region": "Africa",
+    "scope": "National",
+    "path": "assets/newsrooms/daily-nation.svg",
+    "logoSource": "https://nation.africa/resource/crblob/5006890/ca23573d4f8bb93e1e0f2d6fc20bb81c/dn-logo-svg-data.svg",
+    "aboutSource": "https://nation.africa/kenya"
+  },
+  {
+    "id": "the-hindu",
+    "name": "The Hindu",
+    "url": "https://www.thehindu.com/",
+    "country": "India",
+    "region": "Asia",
+    "scope": "National",
+    "path": "assets/newsrooms/the-hindu.svg",
+    "logoSource": "https://www.thehindu.com/theme/images/th-online/thehindu-logo.svg",
+    "aboutSource": "https://www.thehindu.com/aboutus/"
+  },
+  {
+    "id": "rappler",
+    "name": "Rappler",
+    "url": "https://www.rappler.com/",
+    "country": "Philippines",
+    "region": "Asia",
+    "scope": "Independent",
+    "path": "assets/newsrooms/rappler.png",
+    "logoSource": "https://www.rappler.com/tachyon/2023/03/Rappler-logo-1080.png",
+    "aboutSource": "https://www.rappler.com/about/"
+  },
+  {
+    "id": "the-wire",
+    "name": "The Wire",
+    "url": "https://thewire.in/",
+    "country": "India",
+    "region": "Asia",
+    "scope": "Independent",
+    "path": "assets/newsrooms/the-wire.png",
+    "logoSource": "https://cdn.thewire.in/wp-content/uploads/2020/07/09150055/wirelogo_square_white_on_red_favicon.ico",
+    "aboutSource": "https://cms.thewire.in/about-us"
+  },
+  {
+    "id": "groundup",
+    "name": "GroundUp",
+    "url": "https://groundup.org.za/",
+    "country": "South Africa",
+    "region": "Africa",
+    "scope": "Independent",
+    "path": "assets/newsrooms/groundup.png",
+    "logoSource": "https://groundup.org.za/static/newsroom/images/LogoFiles/Logos20180905/icon-196By196.png",
+    "aboutSource": "https://groundup.org.za/about/"
+  },
+  {
+    "id": "bristol-cable",
+    "name": "The Bristol Cable",
+    "url": "https://thebristolcable.org/",
+    "country": "United Kingdom",
+    "region": "Europe",
+    "scope": "Local",
+    "path": "assets/newsrooms/bristol-cable.svg",
+    "logoSource": "https://thebristolcable.org/wp-content/themes/bristolcable/img/bc-logo-square.svg",
+    "aboutSource": "https://thebristolcable.org/values/"
+  },
+  {
+    "id": "outlier-media",
+    "name": "Outlier Media",
+    "url": "https://outliermedia.org/",
+    "country": "United States",
+    "region": "North America",
+    "scope": "Local",
+    "path": "assets/newsrooms/outlier-media.png",
+    "logoSource": "https://outliermedia.org/wp-content/uploads/2024/09/outlier-media-logo.png",
+    "aboutSource": "https://outliermedia.org/about/"
+  },
+  {
+    "id": "eldiario",
+    "name": "elDiario.es",
+    "url": "https://www.eldiario.es/",
+    "country": "Spain",
+    "region": "Europe",
+    "scope": "Independent",
+    "path": "assets/newsrooms/eldiario.svg",
+    "logoSource": "https://www.eldiario.es/assets/img/svg/logos/eldiario-logo-2c.h-38513507e0c5c2f1f03ae3ccea087019.svg",
+    "aboutSource": "https://www.eldiario.es/que-es-eldiario-es/"
+  },
+  {
+    "id": "sbs",
+    "name": "SBS News",
+    "url": "https://www.sbs.com.au/news/",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "National",
+    "path": "assets/newsrooms/sbs.png",
+    "logoSource": "https://www.sbs.com.au/_next/static/media/app-icon_512x512.9cff3dc8.png",
+    "aboutSource": "https://www.sbs.com.au/aboutus"
+  },
+  {
+    "id": "the-conversation",
+    "name": "The Conversation",
+    "url": "https://theconversation.com/au",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "Independent",
+    "path": "assets/newsrooms/the-conversation.png",
+    "logoSource": "https://images.theconversation.com/files/581997/original/9275d5c0-7dd5-4ddf-b50b-98d537e016f4.png",
+    "aboutSource": "https://theconversation.com/au/who-we-are"
+  },
+  {
+    "id": "guardian-australia",
+    "name": "The Guardian",
+    "url": "https://www.theguardian.com/au",
+    "country": "Australia",
+    "region": "Oceania",
+    "scope": "National",
+    "path": "assets/newsrooms/guardian-australia.png",
+    "logoSource": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-512.png",
+    "aboutSource": "https://www.theguardian.com/info/about-guardian-australia"
+  }
+]

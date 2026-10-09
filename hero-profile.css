@@ -1,0 +1,212 @@
+.hero-profile {
+  position: relative;
+  --ink: var(--on-brand);
+  --muted: var(--on-brand-muted);
+  --accent: var(--on-brand-accent);
+  --focus: var(--on-brand-accent);
+  --line: var(--brand-line);
+  --paper: var(--brand);
+  --danger: #f0a0aa;
+  --radar-grid: #354c80;
+  --radar-line: #b8d0ff;
+  --radar-fill: #a9c7ff26;
+  --radar-label: #c1cfea;
+  color: var(--on-brand);
+  background-color: var(--brand);
+  background-image:
+    radial-gradient(
+      circle at 12% 10%,
+      color-mix(
+          in srgb,
+          var(--profile-model-color, var(--brand)) 34%,
+          transparent
+        )
+        0,
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 90% 92%,
+      color-mix(
+          in srgb,
+          var(--profile-method-color, var(--brand)) 38%,
+          transparent
+        )
+        0,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(
+          in srgb,
+          var(--profile-model-color, var(--brand)) 38%,
+          var(--brand)
+        )
+        0%,
+      var(--brand) 45%,
+      var(--brand) 55%,
+      color-mix(
+          in srgb,
+          var(--profile-method-color, var(--brand)) 42%,
+          var(--brand)
+        )
+        100%
+    );
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 25px 44px;
+  min-width: 0;
+  box-shadow: 0 12px 32px var(--shadow-soft);
+}
+.visual-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.profile-rotation {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--accent);
+  background: transparent;
+}
+.profile-rotation:hover {
+  background: var(--radar-fill);
+}
+.profile-rotation svg {
+  width: 20px;
+  height: 20px;
+}
+.profile-rotation .resume-icon,
+.profile-rotation[aria-pressed="true"] .pause-icon {
+  display: none;
+}
+.profile-rotation[aria-pressed="true"] .resume-icon {
+  display: block;
+}
+.radar-layout {
+  position: relative;
+  margin: 10px -13px -5px;
+}
+.radar-layout svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.radar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0 12px;
+}
+.radar-center strong {
+  font: 700 57px var(--display);
+  letter-spacing: -2px;
+}
+.radar-score-label {
+  margin-top: 3px;
+  color: var(--muted);
+  font: 13.5px var(--mono);
+  letter-spacing: 0.09em;
+}
+.profile-meta {
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--brand) 46%, transparent);
+}
+.profile-meta > div {
+  --metadata-color: var(--ink);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 3px;
+  min-width: 0;
+  padding: 10px 8px;
+  text-align: center;
+}
+.profile-meta > div + div {
+  border-left: 1px solid var(--line);
+}
+.profile-meta [data-profile-field="model"] {
+  --metadata-color: var(--profile-model-color, var(--ink));
+}
+.profile-meta [data-profile-field="method"] {
+  --metadata-color: var(--profile-method-color, var(--ink));
+}
+.profile-meta dt {
+  margin: 0;
+  color: var(--muted);
+  font: 500 12px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.profile-meta dd {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--metadata-color);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.model-link,
+#hero-profile-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  max-width: 100%;
+  color: inherit;
+}
+.model-link[href],
+#hero-profile-method[href] {
+  border-bottom: 1px solid currentColor;
+}
+.model-link span,
+#hero-profile-method {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#hero-model-icon {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  flex-shrink: 0;
+  fill: currentColor;
+  background: #ffffff;
+  border: 1px solid #ffffff66;
+  border-radius: 5px;
+}
+.visual-bottomline {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 17px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.visual-bottomline a {
+  color: var(--accent);
+  white-space: nowrap;
+}
+

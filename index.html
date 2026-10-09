@@ -29,11 +29,14 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260926-28" />
+    <link rel="stylesheet" href="styles.css?v=20261009-7" />
+    <link rel="stylesheet" href="hero-profile.css?v=3" />
+    <script defer src="intro.js?v=20261009-9"></script>
     <script defer src="data.js?v=20260926-2"></script>
     <script defer src="model-icons.js?v=1"></script>
-    <script defer src="app.js?v=20260926-12"></script>
-    <script defer src="site.js?v=20260926-6"></script>
+    <script defer src="app.js?v=20261009-3"></script>
+    <script defer src="hero-profile.js?v=1"></script>
+    <script defer src="site.js?v=20261009-1"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -113,97 +116,168 @@
             <a class="hero-resource" href="https://arxiv.org/abs/2609.35028" target="_blank" rel="noopener noreferrer" aria-label="Read the VEX-Bench paper on arXiv"><img class="hero-resource-icon" src="assets/arxiv-official.svg" alt="" width="18" height="25" loading="lazy" decoding="async" /><strong>arXiv</strong></a>
             <a class="hero-resource" href="https://github.com/HanxunH/VEX-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open the VEX-Bench code repository on GitHub"><img class="hero-resource-icon hero-resource-icon--github" src="assets/github-official.svg" alt="" width="98" height="96" loading="lazy" decoding="async" /><strong>GitHub</strong></a>
             <a class="hero-resource" href="https://huggingface.co/datasets/hanxunh/VEX-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open the VEX-Bench dataset on Hugging Face"><img class="hero-resource-icon" src="assets/huggingface-official.svg?v=2" alt="" width="95" height="88" loading="lazy" decoding="async" /><strong>Hugging Face</strong></a>
+            <div class="hero-resource intro-resource" id="hero-intro" data-intro-state="docked">
+              <div class="intro-backdrop" aria-hidden="true"></div>
+              <button type="button" id="intro-play" class="intro-play" aria-controls="vex-intro" aria-label="Watch the introduction">
+                <span class="hero-resource-icon intro-play-mark" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 4 20 12 7 20Z" />
+                  </svg>
+                </span>
+                <strong>Watch introduction</strong>
+              </button>
+              <div class="intro-slot" id="intro-slot">
+                <div class="intro-frame" id="intro-frame">
+                  <iframe
+                    id="vex-intro"
+                    class="intro-film"
+                    src="animation/?v=4"
+                    title="VEX-Bench introduction"
+                    width="1920"
+                    height="1080"
+                    allow="autoplay"
+                  ></iframe>
+                  <div class="intro-chrome" id="intro-chrome">
+                    <button
+                      type="button"
+                      id="intro-pause"
+                      class="intro-tool"
+                      aria-label="Pause introduction"
+                      aria-controls="vex-intro"
+                      title="Pause"
+                    >
+                      <svg
+                        class="intro-icon-pause"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                      <svg
+                        class="intro-icon-resume"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M7 4 20 12 7 20Z" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      id="intro-sound"
+                      class="intro-tool"
+                      data-muted="false"
+                      aria-label="Mute introduction"
+                      aria-pressed="true"
+                      aria-controls="vex-intro"
+                      title="Mute"
+                    >
+                      <svg
+                        class="intro-icon-off"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 10h3l5-5v14l-5-5H4z"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                        <path d="m16 10 6 6M22 10l-6 6" />
+                      </svg>
+                      <svg
+                        class="intro-icon-on"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 10h3l5-5v14l-5-5H4z"
+                          fill="currentColor"
+                          stroke="none"
+                        />
+                        <path d="M16 9.5a5 5 0 0 1 0 5" />
+                        <path d="M18.5 7a8 8 0 0 1 0 10" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      id="intro-enable-sound"
+                      class="intro-enable"
+                      hidden
+                      disabled
+                      aria-label="Enable sound"
+                      aria-controls="vex-intro"
+                      title="Enable sound"
+                    >
+                      Enable sound
+                    </button>
+                    <span class="intro-chrome-spacer"></span>
+                    <button
+                      type="button"
+                      id="intro-skip"
+                      class="intro-skip"
+                      aria-label="Minimize introduction"
+                      title="Minimize"
+                    >
+                      Minimize
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
         </div>
-        <div
-          class="hero-visual"
-          role="group"
-          aria-label="Interactive verification profile"
-        >
+        <div class="hero-profile" role="group" aria-label="Interactive verification profile">
           <div class="visual-topline">
-            <button
-              id="profile-rotation"
-              class="profile-rotation"
-              type="button"
-              aria-label="Pause profile rotation"
-              aria-pressed="false"
-              aria-controls="hero-radar hero-profile-meta"
-              title="Pause profile rotation"
-              disabled
-            >
-              <svg
-                class="pause-icon"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
+            <button id="profile-rotation" class="profile-rotation" type="button"
+              aria-label="Pause profile rotation" aria-pressed="false"
+              aria-controls="hero-radar hero-profile-meta" title="Pause profile rotation" disabled>
+              <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <rect x="6" y="4" width="4" height="16" rx="1" />
                 <rect x="14" y="4" width="4" height="16" rx="1" />
               </svg>
-              <svg
-                class="resume-icon"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
+              <svg class="resume-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M7 4 20 12 7 20Z" />
               </svg>
             </button>
           </div>
           <div class="radar-layout">
-            <svg
-              id="hero-radar"
-              viewBox="0 0 640 440"
-              role="img"
-              aria-label="Five-dimensional verification complexity profile"
-            ></svg>
+            <svg id="hero-radar" viewBox="0 0 640 440" role="img"
+              aria-label="Five-dimensional verification complexity profile"></svg>
             <div class="radar-center">
-              <strong id="hero-vex">—</strong>
-              <span class="radar-score-label">VEX</span>
+              <strong id="hero-vex">—</strong><span class="radar-score-label">VEX</span>
             </div>
           </div>
-          <dl
-            id="hero-profile-meta"
-            class="profile-meta"
-            aria-label="Current model profile"
-          >
+          <dl id="hero-profile-meta" class="profile-meta" aria-label="Current model profile">
             <div data-profile-field="model">
-              <dt title="Radar outline, points and upper-left background">
-                Model:
-              </dt>
+              <dt title="Radar outline, points and upper-left background">Model:</dt>
               <dd>
-                <a
-                  id="hero-model-link"
-                  class="model-link"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <svg
-                    id="hero-model-icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  ></svg>
+                <a id="hero-model-link" class="model-link" target="_blank" rel="noopener">
+                  <svg id="hero-model-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
                   <span id="hero-profile-label">Loading profile</span>
                 </a>
               </dd>
             </div>
             <div data-profile-field="method">
               <dt title="Radar fill and lower-right background">Method:</dt>
-              <dd>
-                <a id="hero-profile-method" target="_blank" rel="noopener">—</a>
-              </dd>
+              <dd><a id="hero-profile-method" target="_blank" rel="noopener">—</a></dd>
             </div>
             <div data-profile-field="task">
-              <dt>Task:</dt>
-              <dd id="hero-profile-task">—</dd>
+              <dt>Task:</dt><dd id="hero-profile-task">—</dd>
             </div>
           </dl>
           <div class="visual-bottomline">
-            <a
-              href="#framework"
-              aria-label="Learn how verification burden is scored"
-              >How scoring works ↓</a
-            >
+            <a href="#framework" aria-label="Learn how verification burden is scored">How scoring works ↓</a>
           </div>
         </div>
       </section>
@@ -782,6 +856,12 @@
         <a href="#" class="brand">VEX<span class="brand-light">-Bench</span></a>
         <a href="#main">Back to top ↑</a>
       </div>
+      <p class="section-wrap music-credit">
+        Music: <a href="https://www.scottbuckley.com.au/library/computations/" target="_blank" rel="noopener">“Computations in a Snowstorm”</a>
+        (No Cello mix) by <a href="https://www.scottbuckley.com.au/" target="_blank" rel="noopener">Scott Buckley</a>,
+        released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+        Edited 54-second excerpt; fades and loudness adjusted.
+      </p>
     </footer>
     <div class="toast" id="toast" role="status" hidden></div>
   </body>
