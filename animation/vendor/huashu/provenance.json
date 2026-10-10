@@ -47,12 +47,13 @@
       "path": "../../engine.js",
       "source": "scripts/engine/engine.js",
       "sourceSha256": "2ecd3659912e5e2fed75cc62c8eab974c99dabf1bb773699967b822d2ac05259",
-      "copiedSha256": "1e16562a2aaf8a24ba0a586f90108231cec43b51599c618d8d671a52e07b13e7",
+      "copiedSha256": "55df50e074d93cf45a15b970a938dd8c47310b66d7d906ab51902d9af87e3efa",
       "modifications": [
         "Uses canvas #film and VEX_RUNTIME asset/font bootstrap; exposes real ENGINE_READY.",
         "Retains upstream era timing and drawEra/renderFrame/renderSolo rendering.",
         "Removes unused year tags, clip sequences, transition buffers and legacy preview controls.",
-        "Checks the actual Latin film fonts; leaves playback to preview.js."
+        "Checks the actual Latin film fonts; leaves playback to preview.js or the web player.",
+        "Fits live backing resolution to the visible canvas with capped DPR and opaque context; keeps logical coordinates and render=1 export resolution unchanged."
       ]
     }
   ]

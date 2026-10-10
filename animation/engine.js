@@ -4,10 +4,11 @@
 // Unused year tags, clip sequences, transitions and legacy preview controls are removed.
 (() => {
 const W = 1920, H = 1080;
+const LIVE_MAX_W = 1600, LIVE_MIN_W = 640, LIVE_DPR = 1.5;
 const cv = document.getElementById('film');
 if (!cv) throw new Error('canvas #film is required');
-cv.width = W; cv.height = H;
-const ctx = cv.getContext('2d');
+const EXPORT = location.search.includes('render=1');
+const ctx = cv.getContext('2d', { alpha: false });
 window.__canvas = cv;
 window.U.setStage(W, H);
 
@@ -59,9 +60,57 @@ window.prepare = async function () {
   await window.ENGINE_READY;
 };
 
+// Live backing follows the visible 16:9 viewport (DPR cap, pixel budget). Logical stage stays 1920×1080.
+let lastT = 0, lastSoloId, lastSoloLt, lastMode = 'frame', painted = false, resizeRaf = 0;
+function liveCssWidth() {
+  const cw = cv.clientWidth, ch = cv.clientHeight;
+  if (cw > 0 && ch > 0) return Math.min(cw, ch * W / H);
+  return cw > 0 ? cw : 0;
+}
+function backingSize() {
+  if (EXPORT) return { w: W, h: H };
+  const css = liveCssWidth();
+  const dpr = Math.min(window.devicePixelRatio || 1, LIVE_DPR);
+  const w = Math.round(Math.min(LIVE_MAX_W, Math.max(LIVE_MIN_W, (css || LIVE_MIN_W) * dpr)));
+  return { w, h: Math.round(w * H / W) };
+}
+function fitBacking() {
+  const next = backingSize();
+  if (cv.width === next.w && cv.height === next.h) return false;
+  cv.width = next.w;
+  cv.height = next.h;
+  return true;
+}
+function beginDraw(c) {
+  fitBacking();
+  c.setTransform(cv.width / W, 0, 0, cv.height / H, 0, 0);
+}
+function redrawLast() {
+  if (!painted) return;
+  if (lastMode === 'solo') window.renderSolo(lastSoloId, lastSoloLt);
+  else renderFrame(lastT);
+}
+function scheduleFit() {
+  if (EXPORT || resizeRaf) return;
+  resizeRaf = requestAnimationFrame(() => {
+    resizeRaf = 0;
+    const next = backingSize();
+    if (!painted) { fitBacking(); return; }
+    if (cv.width !== next.w || cv.height !== next.h) redrawLast();
+  });
+}
+fitBacking();
+if (!EXPORT) {
+  if (typeof ResizeObserver === 'function') new ResizeObserver(scheduleFit).observe(cv);
+  window.addEventListener('resize', scheduleFit);
+  if (window.visualViewport) visualViewport.addEventListener('resize', scheduleFit);
+  window.addEventListener('pagehide', () => { if (resizeRaf) cancelAnimationFrame(resizeRaf); resizeRaf = 0; });
+}
+
 // ---------- 画一个时代（本段局部时间 lt） ----------
 function drawEra(c, e, t) {
   const lt = t - e.t0;
+  beginDraw(c);
   c.save();
   c.clearRect(0, 0, W, H);
   if (typeof e.draw !== 'function') throw new Error(`Missing artist: ${e.id}`);
@@ -71,10 +120,13 @@ function drawEra(c, e, t) {
 
 // ---------- 主渲染 ----------
 function renderFrame(t) {
+  lastMode = 'frame';
+  lastT = t;
   let k = ERAS.findIndex(e => t >= e.t0 && t < e.t1);
   if (k < 0) k = ERAS.length - 1;
   drawEra(ctx, ERAS[k], t);
   if (window.GLOBAL_OVERLAY) window.GLOBAL_OVERLAY(ctx, t);
+  painted = true;
   return k;
 }
 window.renderFrame = renderFrame;
@@ -82,10 +134,14 @@ window.renderFrame = renderFrame;
 window.renderSolo = function (id, lt) {
   const era = ERAS.find(e => e.id === id);
   if (!era) throw new Error(`Unknown solo scene: ${id}`);
+  lastMode = 'solo';
+  lastSoloId = id;
+  lastSoloLt = lt;
   drawEra(ctx, era, era.t0 + lt);
+  painted = true;
 };
 
-if (location.search.includes('render=1')) document.body.classList.add('render');
+if (EXPORT) document.body.classList.add('render');
 window.ENGINE_READY = (async () => {
   try {
     await boot();

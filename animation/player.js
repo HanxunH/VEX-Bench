@@ -4,12 +4,13 @@
   const status = document.getElementById("load-state");
   const origin = location.origin;
   const FRAME_MS = 1000 / 30;
+  const CADENCE_SLACK_MS = 2;
   let ready = false;
   let playing = false;
   let time = 0;
   let anchor = 0;
   let frame = 0;
-  let lastPaint = -Infinity;
+  let cadenceSlot = -1;
   let lastUpdate = -Infinity;
   let audioRequest = 0;
   let pendingStart = null;
@@ -36,15 +37,25 @@
     audio.pause();
   }
 
+  function alignAudio() {
+    if (audio.readyState < 1) return;
+    const synced = currentTime();
+    if (Math.abs(audio.currentTime - synced) < 0.01) return;
+    audio.currentTime = synced;
+  }
+
   function startAudio() {
     const request = ++audioRequest;
     soundBlocked = false;
-    if (audio.readyState >= 1) audio.currentTime = currentTime();
+    alignAudio();
     const attempt = audio.play();
     if (!attempt) return;
     attempt.then(() => {
       if (request !== audioRequest || !playing || audio.paused) return;
       soundBlocked = false;
+      if (audio.readyState >= 1 && Math.abs(audio.currentTime - currentTime()) > 0.2) {
+        audio.currentTime = currentTime();
+      }
       if (!audio.muted) report("sound");
     }).catch((failure) => {
       if (request !== audioRequest || !playing || failure.name === "AbortError") return;
@@ -65,9 +76,10 @@
     if (!playing) return;
     const next = currentTime(now);
     try {
-      if (next === window.__total || now - lastPaint >= FRAME_MS - 0.5) {
+      const slot = Math.floor((now - anchor + CADENCE_SLACK_MS) / FRAME_MS);
+      if (next === window.__total || slot > cadenceSlot) {
         window.VEX_FILM.seek(next);
-        lastPaint = now;
+        cadenceSlot = slot;
       }
       if (next === window.__total) {
         time = next;
@@ -78,9 +90,6 @@
         return;
       }
       if (now - lastUpdate >= 250) {
-        if (!audio.paused && audio.readyState >= 1 && Math.abs(audio.currentTime - next) > 0.2) {
-          audio.currentTime = next;
-        }
         lastUpdate = now;
         report("timeupdate");
       }
@@ -106,7 +115,7 @@
     frame = 0;
     playing = true;
     anchor = performance.now();
-    lastPaint = -Infinity;
+    cadenceSlot = 0;
     lastUpdate = -Infinity;
     window.VEX_FILM.seek(time);
     // Synchronous call from the parent click preserves the sound activation gesture.
@@ -161,7 +170,7 @@
     }
   });
   audio.addEventListener("loadedmetadata", () => {
-    if (playing) audio.currentTime = currentTime();
+    if (playing) alignAudio();
   });
   audio.addEventListener("error", () => {
     soundBlocked = true;

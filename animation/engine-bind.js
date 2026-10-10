@@ -17,13 +17,17 @@
     return n;
   }
 
+  let labelled;
   function seek(t) {
     const time = clampTime(t);
     window.renderFrame(time);
     const caption = rt.captionAt(time);
     api.caption = caption;
     const canvas = window.__canvas;
-    if (canvas) canvas.setAttribute('aria-label', caption);
+    if (canvas && caption !== labelled) {
+      labelled = caption;
+      canvas.setAttribute('aria-label', caption);
+    }
     return time;
   }
 

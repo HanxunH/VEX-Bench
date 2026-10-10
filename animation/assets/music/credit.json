@@ -1,13 +1,13 @@
 {
-  "title": "Computations in a Snowstorm",
+  "title": "Simplicity",
   "artist": "Scott Buckley",
-  "mix": "No Cello alternative mix",
-  "track_url": "https://www.scottbuckley.com.au/library/computations/",
-  "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/01/sb_computations_altmix.mp3",
+  "mix": "Full mix",
+  "track_url": "https://www.scottbuckley.com.au/library/simplicity/",
+  "download_url": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/03/Simplicity.mp3",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "attribution": "'Computations in a Snowstorm' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
-  "changes": "No Cello mix; 0-54 second excerpt, fade-in/fade-out and loudness adjustment for VEX-Bench animation.",
+  "attribution": "'Simplicity' by Scott Buckley - released under CC-BY 4.0. www.scottbuckley.com.au",
+  "changes": "Full mix; 0-54 second excerpt, fade-in/fade-out and loudness adjustment for VEX-Bench animation.",
   "excerpt": {
     "start_seconds": 0.0,
     "duration_seconds": 54.0,
@@ -15,7 +15,7 @@
     "fade_out_seconds": 3.5,
     "target_lufs": -20
   },
-  "source_duration_seconds": 361.625488,
-  "source_sha256": "678dabce348ecd305ee4c998b258275acd1f4731a858083d11535467207bc5e0",
-  "excerpt_sha256": "c447aef55d629e6bb2d24513c63dd4cae2d1e8b6c269340d6960033cc9af8014"
+  "source_duration_seconds": 184.507211,
+  "source_sha256": "71cfdd6d81765a0624f6b48704a26cfbeb095f83190c1d52d9fcfba3fe1afb0b",
+  "excerpt_sha256": "54e35e082711fadde0579cb7b3e1836da78214aed7e95942bbf7ec5d19e5eac3"
 }
